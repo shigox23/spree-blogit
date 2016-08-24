@@ -2,6 +2,8 @@ module Spree
   module Blogit
     class Post < ActiveRecord::Base
 
+      self.table_name = "blogit_posts"
+
       require "kaminari"
       require "acts-as-taggable-on"
 

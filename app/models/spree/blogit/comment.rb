@@ -2,6 +2,8 @@ module Spree
   module Blogit
     class Comment < ActiveRecord::Base
 
+      self.table_name = "blogit_comments"
+
       # require custom validators
       require "validators"
       include Validators
