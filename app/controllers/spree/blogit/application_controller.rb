@@ -14,7 +14,7 @@ module Spree
       #
       # Returns a Blogit::Configuration
       def self.blogit_conf
-        Blogit::configuration
+        SpreeBlogit::configuration
       end
 
       # A helper method to access the {Blogit::configuration} at the controller instance

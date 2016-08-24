@@ -15,7 +15,7 @@ module Spree
       attr_reader :posts
 
       # If a layout is specified, use that. Otherwise, fall back to the default
-      layout Blogit.configuration.layout if Blogit.configuration.layout
+      layout SpreeBlogit.configuration.layout if SpreeBlogit.configuration.layout
 
       # Handles GET requests to /blogit/posts.html, /blogit/posts.xml, and /blogit/posts.rss
       # Possible formats include:
@@ -60,7 +60,7 @@ module Spree
 
       # Set {#post} based on the :id param
       def set_post
-        @post = Post.active_with_id(params[:id])
+        @post = Spree::Blogit::Post.active_with_id(params[:id])
       end
 
       # The page parameter value for the current locale
@@ -70,7 +70,7 @@ module Spree
 
       # Sets {#posts} for the XML feed
       def set_posts_for_feed
-        @posts ||= Post.for_feed
+        @posts ||= Spree::Blogit::Post.for_feed
       end
 
       # Sets {#posts} for the HTML index page
@@ -78,7 +78,7 @@ module Spree
       # tag - The tag name to filter Posts by (default: nil)
       #
       def set_posts_for_index_page(tag = nil)
-        @posts ||= Post.for_index(page_number)
+        @posts ||= Spree::Blogit::Post.for_index(page_number)
       end
 
       # Sets {#posts} for the HTML index page when a tag parameter is present

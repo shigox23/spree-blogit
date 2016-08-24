@@ -7,7 +7,7 @@ module Spree
 
       acts_as_taggable
 
-      self.paginates_per(Blogit.configuration.posts_per_page)
+      self.paginates_per(SpreeBlogit.configuration.posts_per_page)
 
       # ===============
       # = Validations =
@@ -17,7 +17,7 @@ module Spree
 
       validates :body,  presence: true, length: { minimum: 10 }
 
-      validates :description, presence: Blogit.configuration.show_post_description
+      validates :description, presence: SpreeBlogit.configuration.show_post_description
 
       validates :blogger_id, presence: true
 
@@ -46,7 +46,7 @@ module Spree
       scope :for_index, lambda { |page_no = 1|
         active.order("created_at DESC").page(page_no) }
 
-      scope :active, lambda { where(state:  Blogit.configuration.active_states ) }
+      scope :active, lambda { where(state:  SpreeBlogit.configuration.active_states ) }
 
 
       # The posts to be displayed for RSS and XML feeds/sitemaps
@@ -84,7 +84,7 @@ module Spree
       # Returns description when Blogit.configuration.show_post_description is true
       # Returns body when Blogit.configuration.show_post_description is false
       def short_body
-        if Blogit.configuration.show_post_description
+        if SpreeBlogit.configuration.show_post_description
           description
         else
           body
@@ -109,11 +109,11 @@ module Spree
       # Raises a ConfigurationError if the method called is not defined on {#blogger}
       def blogger_display_name
         return "" if blogger.blank?
-        if blogger.respond_to?(Blogit.configuration.blogger_display_name_method)
-          blogger.send(Blogit.configuration.blogger_display_name_method)
+        if blogger.respond_to?(SpreeBlogit.configuration.blogger_display_name_method)
+          blogger.send(SpreeBlogit.configuration.blogger_display_name_method)
         else
-          method_name = Blogit.configuration.blogger_display_name_method
-          raise ConfigurationError, "#{blogger.class}##{method_name} is not defined"
+          method_name = SpreeBlogit.configuration.blogger_display_name_method
+          raise SpreeBlogit::ConfigurationError, "#{blogger.class}##{method_name} is not defined"
         end
       end
 
@@ -130,7 +130,7 @@ module Spree
 
 
       def check_comments_config
-        unless Blogit.configuration.include_comments == :active_record
+        unless SpreeBlogit.configuration.include_comments == :active_record
           raise RuntimeError,
             "Posts only allow active record comments (check blogit configuration)"
         end

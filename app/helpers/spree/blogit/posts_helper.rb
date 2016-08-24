@@ -2,12 +2,12 @@ module Spree
   module Blogit
     module PostsHelper
 
-      require "spree/blogit/archive"
+      require "spree_blogit/archive"
 
       # Renders the comments for a {Post} based on the
       # {Blogit::Configuration::include_comments} configuration
       def comments_for_post(post)
-        comment_type = Blogit.configuration.include_comments
+        comment_type = SpreeBlogit.configuration.include_comments
         render(partial: "spree/blogit/comments/#{comment_type}_comments",
           locals: { post: post, comment: Blogit::Comment.new })
       end
@@ -15,7 +15,7 @@ module Spree
       # Renders the comments for a JS share bar based on the
       # {Blogit::Configuration::include_share_bar} configuration
       def share_bar_for_post(post)
-        return "" unless Blogit.configuration.include_share_bar
+        return "" unless SpreeBlogit.configuration.include_share_bar
         render(partial: "spree/blogit/posts/share_bar", locals: { post: post})
       end
 
@@ -42,7 +42,7 @@ module Spree
       #
       # Returns an HTML safe String
       def archive_list_for_posts(archive_posts)
-        render Spree::Blogit::Archive::List.new(archive_posts)
+        render SpreeBlogit::Archive::List.new(archive_posts)
       end
 
     end
