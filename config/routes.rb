@@ -1,18 +1,18 @@
-# Spree::Core::Engine.routes.draw do
-#   # Add your extension routes here
-# end
-
 # SpreeBlogit::Engine.routes.draw do
 Spree::Core::Engine.routes.draw do
 
-  # Keep these above the posts resources block
-  get "blog/page/:page" => "posts#index"
-  get "blog/tagged/:tag" => 'posts#tagged', as: :tagged_blog_posts
+  # blog = Spree::Blogit
+  namespace :blog, module: :blogit do
+  # # Keep these above the posts resources block
+    # get "page/:page" => "spree/blogit/posts#index"
+    # get "tagged/:tag" => 'posts#tagged', as: :tagged_blog_posts
+    #
 
-  resources :posts do
-    resources :comments, only: [:create, :destroy]
+    resources :posts do
+        resources :comments, only: [:create, :destroy]
+    end
+
+    get '/' => 'blogit/posts#index', as: :blog_root
   end
-
-  get "/blog/" => "posts#index", as: :blog_root
 
 end
