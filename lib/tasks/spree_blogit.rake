@@ -15,13 +15,11 @@ namespace :spree_blogit do
         rescue NoMethodError
           warn "Couldn't find a blogger model record :("
         end
-      end      
+      end
     end
   end
   
-  
   private
-  
   
   def seed_blog_content
     YAML.load(File.read(File.join(File.dirname(__FILE__), "seed_blog_posts.yml")))
@@ -34,8 +32,10 @@ namespace :spree_blogit do
   
   # The fellow who's going to write these posts...
   def blogger
-    ActiveRecord::Base.subclasses.detect(&:blogs?) ||
-      warn("Can't seed your database, couldn't find a model that #blogs?")
+    Spree::User
+
+    # ActiveRecord::Base.subclasses.detect(&:blogs?) ||
+    #   warn("Can't seed your database, couldn't find a model that #blogs?")
   end
   
 end
