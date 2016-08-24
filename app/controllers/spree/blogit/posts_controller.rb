@@ -2,7 +2,7 @@ module Spree
   module Blogit
 
     # Handles requests for viewing Blogit::Posts
-    class PostsController < ::Blogit::ApplicationController
+    class PostsController < Spree::Blogit::ApplicationController
 
       # The current Blogit::Post being displayed.
       #

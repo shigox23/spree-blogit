@@ -2,7 +2,7 @@ module Spree
   module Blogit
 
     # Handles requests for creating Blogit::Comments
-    class CommentsController < ApplicationController
+    class CommentsController < Spree::Blogit::ApplicationController
 
       # Accessor method for the comment being created
       #
