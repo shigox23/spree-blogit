@@ -19,7 +19,7 @@
     <a href="https://twitter.com/share" class="twitter-share-button"
         data-lang="<%= I18n.default_locale %>"
         data-url="http://<%= request.host_with_port %><%= request.path.gsub("//","/") %>"
-        data-via="<%= Blogit.configuration.twitter_username %>"
+        data-via="<%= SpreeBlogit.configuration.twitter_username %>"
         data-text="<%= post.title%>"
         data-count="horizontal">Tweet</a>
 
