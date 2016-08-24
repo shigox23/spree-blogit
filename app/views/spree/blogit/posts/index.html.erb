@@ -4,17 +4,17 @@
   </h2>
 <% end %>
 
-<div class="blogit_posts_list">
+<div class="blogit_posts_list row">
   <% if @posts.any? %>
-    <%= render partial: "blogit/posts/post",
+    <%= render partial: "spree/blogit/posts/post",
       collection: @posts,
       spacer_template: "blog_post_spacer",
       locals: { 
-        show_comments_count: (Blogit.configuration.include_comments == :active_records) 
+        show_comments_count: (SpreeBlogit.configuration.include_comments == :active_records)
       }  %>
   <% else %>
 
-    <%= render partial: "blogit/posts/empty" %>
+    <%= render partial: "spree/blogit/posts/empty" %>
 
   <% end %>
 </div>

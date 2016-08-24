@@ -3,7 +3,7 @@
     <%= t :related_posts, :scope => "blogit.posts" %>
   </h3>
   <div class="blogit_related_posts__list">
-    <%= render partial: "blogit/posts/related_post", 
+    <%= render partial: "spree/blogit/posts/related_post",
       collection: related_posts_for_post(post), as: :related_post %>
   </div>
 </div>
