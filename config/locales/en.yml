@@ -1,5 +1,7 @@
 en:
   blogit:
+    blog_title: "Wall Blog"
+
     comments:
       leave_a_comment: "Leave a comment"
       name: "Name *"
