@@ -33,10 +33,10 @@ module Spree
 
       private
 
+      # Form is setting a "blogit_comment" param, change it to what the controller wants
       def set_comment
         params[:comment] = params[:blogit_comment]
       end
-
 
       # Set this controller's post attribute to the current Post
       def set_post_from_post_id
