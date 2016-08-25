@@ -14,8 +14,6 @@ module Spree
       # Returns Post
       attr_reader :post
 
-      before_action :set_comment, only: [:create]
-
       # Handles POST requests to /blogit/comments.html and /blogit/comments.js
       #
       # Yields #comment if called with a block (useful for calling super from subclasses)
@@ -32,11 +30,6 @@ module Spree
 
 
       private
-
-      # Form is setting a "blogit_comment" param, change it to what the controller wants
-      def set_comment
-        params[:comment] = params[:blogit_comment]
-      end
 
       # Set this controller's post attribute to the current Post
       def set_post_from_post_id
