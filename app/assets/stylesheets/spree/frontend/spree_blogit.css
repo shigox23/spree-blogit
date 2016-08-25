@@ -2,3 +2,56 @@
 Placeholder manifest file.
 the installer will append this file to the app vendored assets here: 'vendor/assets/stylesheets/spree/frontend/all.css'
 */
+
+#blog {
+    padding: 0 30px;
+}
+
+.blogit_archive__list {
+    padding: 0;
+    list-style-type: none; }
+
+.blogit_archive__list--months {
+    padding-left: 0.5em;
+    display: none; }
+
+.blogit_archive__list--archiveables {
+    margin-bottom: 0.5em;
+    padding-left: 0.5em;
+    display: none; }
+
+.blogit_archive__item--post {
+    margin: 0.5em 0; }
+
+.blogit_header--page {
+    font-size: 2em; }
+
+.row.blogit_posts_list {
+    margin: 0;
+}
+
+.blogit_post {
+    font-size: 1.2em;
+    line-height: 1.75em;
+}
+
+.blogit_post__header {
+    margin: 0 0 1em;
+    font-size: 1.75em;
+}
+
+.blogit_post__information {
+    margin: 10px 0 30px;
+    padding: 10px 15px;
+    background: #ededed;
+    font-style: italic;
+}
+
+.blogit_post p {
+    margin: 0 0 1.5em;
+}
+
+.blog_tags-li {
+    display: inline;
+}
+
