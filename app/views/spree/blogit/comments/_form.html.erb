@@ -1,40 +1,49 @@
-<%= form_for [post, comment], url: blog_post_comments_path(post.id), remote: blogit_conf.ajax_comments, html: { class: "blogit_form" } do |f| -%>
+<div class="row" id="comment_form">
+  <div class="col-md-6">
 
-  <h3 class="blogit_form__header">
-    <%= t :leave_a_comment, scope: 'blogit.comments' %>
-  </h3>
+    <%= form_for [post, comment], url: blog_post_comments_path(post.id), remote: blogit_conf.ajax_comments, html: { class: 'blogit_form' } do |f| -%>
 
-  <%= field class: "hidden" do %>
-    <%= f.label :nickname, "Nickname (Hide me using CSS)", class: "blogit_form__label" %>
-    <%= f.text_field :nickname, name: 'comment[nickname]', class: "blogit_form__field" %>
-  <% end %>
+      <h3 class='blogit_form__header'>
+        <%= t :leave_a_comment, scope: 'blogit.comments' %>
+      </h3>
 
-  <%= field do %>
-    <%= f.label :name, t(:name, scope: 'blogit.comments'), class: "blogit_form__label" %>
-    <%= f.text_field :name, name: 'comment[name]', class: "blogit_form__field", required: true  %>
-    <%= errors_on(comment, :name) %>
-  <% end %>
+      <%= field class: 'hidden' do %>
+        <%= f.label :nickname, 'Nickname (Hide me using CSS)', class: 'blogit_form__label' %>
+        <%= f.text_field :nickname, name: 'comment[nickname]', class: 'blogit_form__field' %>
+      <% end %>
 
-  <%= field do %>
-    <%= f.label :email, t(:email_never_displayed, scope: 'blogit.comments'), class: "blogit_form__label" %>
-    <%= f.email_field :email, name: 'comment[email]', class: "blogit_form__field", required: true %>
-    <%= errors_on(comment, :email) %>
-  <% end %>
+      <%= f.field_container :name, class: ['form-group'] do %>
+        <%= f.label :name, t(:name, scope: 'blogit.comments'), class: 'blogit_form__label' %>
+        <%= f.text_field :name, name: 'comment[name]', class: 'blogit_form__field form-control', required: true  %>
+        <%= errors_on(comment, :name) %>
+      <% end %>
 
-  <%= field do %>
-    <%= f.label :website, t(:your_website, scope: 'blogit.comments'), class: "blogit_form__label" %>
-    <%= f.url_field :website, name: 'comment[website]', class: "blogit_form__field" %>
-    <%= errors_on(comment, :website) %>
-  <% end %>
+      <%= f.field_container :email, class: ['form-group'] do %>
+        <%= f.label :email, t(:email_never_displayed, scope: 'blogit.comments'), class: 'blogit_form__label' %>
+        <%= f.email_field :email, name: 'comment[email]', class: 'blogit_form__field form-control', required: true %>
+        <%= errors_on(comment, :email) %>
+      <% end %>
 
-  <%= field do %>
-    <%= f.label :body, t(:your_comment, scope: 'blogit.comments'), class: "blogit_form__label"  %>
-    <%= f.text_area :body, name: 'comment[body]', required: true, class: "blogit_form__field blogit_form__field--textarea" %>
-    <%= errors_on(comment, :body) %>
-  <% end %>
+      <%= f.field_container :website, class: ['form-group'] do %>
+        <%= f.label :website, t(:your_website, scope: 'blogit.comments'), class: 'blogit_form__label' %>
+        <%= f.url_field :website, name: 'comment[website]', class: 'blogit_form__field form-control' %>
+        <%= errors_on(comment, :website) %>
+      <% end %>
 
-  <%= actions do %>
-    <%= f.submit t(:add_comment, scope: 'blogit.comments'), disable_with: t(:adding_comment, scope: 'blogit.comments') %>
-  <% end %>
-  
-<% end -%>
+      <%= f.field_container :body, class: ['form-group'] do %>
+        <%= f.label :body, t(:your_comment, scope: 'blogit.comments'), class: 'blogit_form__label'  %>
+        <%= f.text_area :body, name: 'comment[body]', required: true, class: 'blogit_form__field blogit_form__field--textarea form-control' %>
+        <%= errors_on(comment, :body) %>
+      <% end %>
+
+      <%= actions do %>
+        <%#= f.submit t(:add_comment, scope: 'blogit.comments'), disable_with: t(:adding_comment, scope: 'blogit.comments') %>
+      <% end %>
+
+        <div class="form-actions" data-hook="buttons">
+          <%= f.button t(:add_comment, scope: 'blogit.comments'), { :type => 'submit', :class => %w(btn-lg btn btn-primary col-sm-4 col-xs-12) } %>
+        </div>
+    <% end -%>
+
+  </div>
+</div>

@@ -1,4 +1,4 @@
-<%= content_tag(:div, id: "blogit_comment_#{comment.id}", class: "blogit_comment") do %>
+<%= content_tag(:div, id: "blogit_comment_#{comment.id}", class: "blogit_comment " + cycle('odd', 'even')) do %>
 
   <div class="blogit_comment__name">
     <%= name_for_comment(comment) %>

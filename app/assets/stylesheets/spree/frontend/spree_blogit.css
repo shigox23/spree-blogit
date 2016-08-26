@@ -4,27 +4,32 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
 */
 
 #blog {
-    padding: 0 30px;
+    padding: 0 30px 30px;
 }
 
 .blogit_archive__list {
     padding: 0;
-    list-style-type: none; }
+    list-style-type: none;
+}
 
 .blogit_archive__list--months {
     padding-left: 0.5em;
-    display: none; }
+    display: none;
+}
 
 .blogit_archive__list--archiveables {
     margin-bottom: 0.5em;
     padding-left: 0.5em;
-    display: none; }
+    display: none;
+}
 
 .blogit_archive__item--post {
-    margin: 0.5em 0; }
+    margin: 0.5em 0;
+}
 
 .blogit_header--page {
-    font-size: 2em; }
+    font-size: 2em;
+}
 
 .row.blogit_posts_list {
     margin: 0;
@@ -32,7 +37,7 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
 
 .blogit_post {
     font-size: 1.2em;
-    line-height: 1.75em;
+    line-height: 2em;
 }
 
 .blogit_post__header {
@@ -47,11 +52,51 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
     font-style: italic;
 }
 
-.blogit_post p {
+.blogit_post h2 {
+    font-size: 1.5em;
+    margin: 0 0 1em;
+}
+
+.blogit_post p,
+.blogit_post ul {
     margin: 0 0 1.5em;
+}
+
+#blogit_tags,
+#blogit_related_posts,
+.blogit_comments_list,
+#comment_form {
+    border-top: 1px solid silver;
+    margin: 20px 0;
 }
 
 .blog_tags-li {
     display: inline;
 }
 
+.blogit_comments_list {
+    margin: 20px 0;
+}
+
+.blogit_comment {
+    margin: 20px 0;
+    padding: 15px;
+    font-size: .9em;
+}
+
+.blogit_comment.odd {
+    background: #ededed;
+}
+
+.blogit_comment__name {
+    margin: 0 0 1em;
+    font-style: italic;
+}
+
+.blogit_comment__created_at {
+    font-style: italic;
+}
+
+#comment_form #blogit_comment_body {
+    height: 8em;
+}
