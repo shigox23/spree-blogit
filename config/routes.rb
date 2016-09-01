@@ -9,4 +9,14 @@ Spree::Core::Engine.routes.draw do
     end
     get '/' => 'posts#index', as: :root
   end
+
+  namespace :admin do
+    namespace :blog, module: :blogit do
+      resources :posts do
+        resources :comments
+      end
+      get '/' => 'posts#index', as: :root
+    end
+  end
+
 end

@@ -39,7 +39,7 @@ module Spree
       # The {Comment Comments} written on this Post
       #
       # Returns an ActiveRecord::Relation instance
-      has_many :comments, :class_name => "Spree::Blogit::Comment"
+      has_many :comments, :class_name => 'Spree::Blogit::Comment'
 
       # ==========
       # = Scopes =
@@ -78,7 +78,11 @@ module Spree
       end
 
       def to_param
-        "#{id}-#{title.parameterize}"
+        unless title.nil?
+          "#{id}-#{title.parameterize}"
+        end
+
+        id
       end
 
       # The content of the Post to be shown in the RSS feed.
@@ -127,6 +131,9 @@ module Spree
         end
       end
 
+      def self.for_admin_index(page_no)
+        page(page_no).order('created_at DESC').per(10)
+      end
 
       private
 

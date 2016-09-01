@@ -1,0 +1,18 @@
+<% unless blogit_conf.author_edits_only and
+   !post_by_this_blogger?(post, current_blogger) %>
+   
+  <div class="blog_post_actions">
+    <%= link_to(t(:edit_post, scope: 'blogit.admin.posts'), edit_post_path(post), 
+      class: "blog_post_actions-link") %> | 
+    <%= link_to(post, method: :delete, class: "blog_post_actions-link",
+      data: { 
+        confirm: t(:are_you_sure_you_want_to_remove_this_post, 
+          scope: 'blogit.admin.posts') }) do %>
+            
+      <%= t(:delete_post, scope: 'blogit.admin.posts') %>
+      
+    <% end %>
+    
+  </div>
+  
+<% end %>
