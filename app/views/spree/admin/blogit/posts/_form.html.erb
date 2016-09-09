@@ -34,5 +34,3 @@
   <%= f.label :state, t(:state, scope: 'blogit.admin.posts') %> <span class="required">*</span>
   <%= f.collection_select(:state, blogit_conf.active_states + blogit_conf.hidden_states, :to_s, :to_s, {}, { class: 'form-control', :required => true }) %>
 <% end %>
-
-
