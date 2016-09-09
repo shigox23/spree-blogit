@@ -1,6 +1,16 @@
-var $form = $("form.blogit_form");
+var $form = $('form.blogit_form');
 <% if @comment.save %>
-  $(".blogit_comments_list").append("<%= escape_javascript(render(@comment)) %>");
+
+  last_comment = $('.blogit_comments_list .blogit_comment').last();
+  last_parity = last_comment.attr('class').replace('blogit_comment ', '');
+  new_parity = last_parity == 'even' ? 'odd' : 'even';
+
+  new_comment = '<%= escape_javascript(render(@comment)) %>';
+  comment_obj = $('<div/>').html(new_comment).contents();
+  comment_obj.removeClass('even odd').addClass(new_parity);
+
+  $('.blogit_comments_list').append(comment_obj);
+
   $form.get(0).reset();
 <% else %>
   $form.html("<%= escape_javascript(render(partial:'form', locals: { post: @comment.post, comment: @comment })) %>");
