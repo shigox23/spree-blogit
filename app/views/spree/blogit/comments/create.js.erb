@@ -2,8 +2,13 @@ var $form = $('form.blogit_form');
 <% if @comment.save %>
 
   last_comment = $('.blogit_comments_list .blogit_comment').last();
-  last_parity = last_comment.attr('class').replace('blogit_comment ', '');
-  new_parity = last_parity == 'even' ? 'odd' : 'even';
+
+  if (last_comment.length) {
+    last_parity = last_comment.attr('class').replace('blogit_comment ', '');
+    new_parity = last_parity == 'even' ? 'odd' : 'even';
+  } else {
+    new_parity = 'odd';
+  }
 
   new_comment = '<%= escape_javascript(render(@comment)) %>';
   comment_obj = $('<div/>').html(new_comment).contents();
