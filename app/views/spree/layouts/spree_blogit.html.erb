@@ -28,5 +28,8 @@
 <%= render partial: 'spree/shared/footer' %>
 <%= render partial: 'spree/shared/modal' %>
 
+<% unless @post.nil? %>
+  <script id="dsq-count-scr" src="//<%= SpreeBlogit.configuration.disqus_shortname %>.disqus.com/count.js" async></script>
+<% end %>
 </body>
 </html>
