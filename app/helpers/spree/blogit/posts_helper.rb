@@ -8,8 +8,7 @@ module Spree
       # {Blogit::Configuration::include_comments} configuration
       def comments_for_post(post)
         comment_type = SpreeBlogit.configuration.include_comments
-        render(partial: "spree/blogit/comments/#{comment_type}_comments",
-          locals: { post: post, comment: Blogit::Comment.new })
+        render(partial: "spree/blogit/comments/#{comment_type}_comments", locals: { post: post, comment: Spree::Blogit::Comment.new })
       end
 
       # Renders the comments for a JS share bar based on the
