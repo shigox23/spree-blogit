@@ -16,8 +16,7 @@
   <%= share_bar_for_post @post %>
 
   <%# Render the no. of comments %>
-  <%= render "spree/blogit/posts/comments_count",
-    post: post if defined?(show_comments_count) and show_comments_count %>
+  <%= render "spree/blogit/posts/comments_count", post: post if defined?(show_comments_count) and show_comments_count %>
 
   <%= render "spree/blogit/posts/tags", post: @post %>
   <%= render "spree/blogit/posts/related", post: @post %>
