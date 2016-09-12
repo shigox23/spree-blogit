@@ -7,7 +7,7 @@ namespace :spree_blogit do
     if Rails.env.production?
       warn "Can't seed your production database bro, too risky!"
     else
-      load_all_models
+      # load_all_models
       seed_blog_content.each do |blog_post_atts|
         state = SpreeBlogit.configuration.active_states.first
         begin
@@ -26,9 +26,9 @@ namespace :spree_blogit do
   end
   
   
-  def load_all_models
-    Dir[Rails.root.join("app/models/**/*.rb")].each { |file| load file }
-  end
+  # def load_all_models
+  #   Dir[Rails.root.join("app/models/**/*.rb")].each { |file| load file }
+  # end
   
   # The fellow who's going to write these posts...
   def blogger
