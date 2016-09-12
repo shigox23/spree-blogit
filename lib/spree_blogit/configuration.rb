@@ -36,7 +36,7 @@ module SpreeBlogit
     ##
     # When using :disqus comments, what is the shortname of your forum?
     #  (default: nil)
-    config_accessor(:disqus_shortname, instance_writer: false)
+    config_accessor(:disqus_shortname) { nil } #, instance_writer: false)
 
     ##
     # Load a javascript-based share bar on each blog post?. (default: true)
@@ -137,20 +137,20 @@ module SpreeBlogit
       "SpreeBlogit::Parsers::#{default_parser.to_s.classify}Parser".constantize
     end
 
-    # Sets {#disqus_shortname}.
-    #   If the user has defined a disqus shortname but hasn't set include_comments to
-    #   :disqus will print a warning to the console.
-    #
-    # shortname - A String with the diquss username to use.
-    #
-    def disqus_shortname=(shortname)
-      return if shortname.blank?
-      unless include_comments == :disqus
-        blogit_warn "You've set config.disqus_shortname in your blogit config file but " \
-         "config.include_comments is not set to :disqus"
-      end
-      @disqus_shortname = shortname
-    end
+    # # Sets {#disqus_shortname}.
+    # #   If the user has defined a disqus shortname but hasn't set include_comments to
+    # #   :disqus will print a warning to the console.
+    # #
+    # # shortname - A String with the diquss username to use.
+    # #
+    # def disqus_shortname=(shortname)
+    #   return if shortname.blank?
+    #   unless include_comments == :disqus
+    #     blogit_warn "You've set config.disqus_shortname in your blogit config file but " \
+    #      "config.include_comments is not set to :disqus"
+    #   end
+    #   @disqus_shortname = shortname
+    # end
 
     # The title to use in the index.rss template. (default: [My Application] Blog
     #   Posts")
