@@ -8,6 +8,9 @@
 
   <%= render 'spree/admin/blogit/posts/post_description', post: post %>
 
-  <%= content_tag :p, comments_count_for_post(post), :class => 'comments_count' %>
+  <% if SpreeBlogit.configuration.include_comments == :active_record %>
+    <%= content_tag :p, comments_count_for_post(post), :class => 'comments_count' %>
+  <% end %>
+
   <%= content_tag :p, "State: #{post.state}", :class => 'state' %>
 <% end %>
