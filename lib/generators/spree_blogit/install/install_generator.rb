@@ -27,13 +27,13 @@ module SpreeBlogit
         end
       end
 
-      source_root File.expand_path('../../../templates', __FILE__)
-
-      desc "Creates a Blogit initializer in your application's config/initializers dir"
-
-      def copy_initializer
-        template "spree_blogit.rb", "config/initializers/spree_blogit.rb"
-      end
+      # source_root File.expand_path('../../../templates', __FILE__)
+      #
+      # desc "Creates a Blogit initializer in your application's config/initializers dir"
+      #
+      # def copy_initializer
+      #   template "spree_blogit.rb", "config/initializers/spree_blogit.rb"
+      # end
     end
   end
 end
