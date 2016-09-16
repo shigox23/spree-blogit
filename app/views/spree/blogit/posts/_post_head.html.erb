@@ -1,4 +1,5 @@
 <%= content_tag(:h2, class: "blogit_post__header") do %>
-  <%= link_to(post.title, blog_post_path(post.id), class: "blogit_post__header_link") %>
+  <%= blog_title(post) %>
 <% end %>
+<%= time_tag(post.created_at, pubdate: true, class: "blogit_post__published_at" , :format=> '%B %d %Y') %>
 

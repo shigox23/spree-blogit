@@ -1,6 +1,15 @@
 module Spree
   module Blogit
     module PostsHelper
+    
+      # Shows the blog title as a link on the index page, and not on the post page
+      def blog_title(post)
+        if @post
+          post.title
+        else
+          link_to(post.title, blog_post_path(post.id), class: "blogit_post__header_link")
+        end
+      end
 
       require "spree_blogit/archive"
 
