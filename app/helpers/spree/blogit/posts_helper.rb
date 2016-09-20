@@ -5,9 +5,9 @@ module Spree
       # Shows the blog title as a link on the index page, and not on the post page
       def blog_title(post)
         if @post
-          post.title
+          content_tag(:h1, class: "blogit_post__header") {post.title}
         else
-          link_to(post.title, blog_post_path(post.id), class: "blogit_post__header_link")
+          content_tag(:h2, class: "blogit_post__header") {link_to(post.title, blog_post_path(post.id), class: "blogit_post__header_link")}
         end
       end
 

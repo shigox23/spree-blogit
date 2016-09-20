@@ -1,3 +1,7 @@
+<% if @is_head == true %>
+<%= link_to tag.upcase, tagged_blog_posts_path(tag), class: "blogit-main-tag" %>
+<% else  %>
 <li class="blogit_tag">
   <span class="label label-info"><%= link_to tag, tagged_blog_posts_path(tag), class: "blogit_tag__link" %></span>
 </li>
+<% end %>

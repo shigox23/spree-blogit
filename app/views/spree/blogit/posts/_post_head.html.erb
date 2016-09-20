@@ -1,5 +1,2 @@
-<%= content_tag(:h2, class: "blogit_post__header") do %>
-  <%= blog_title(post) %>
-<% end %>
-<%= time_tag(post.created_at, pubdate: true, class: "blogit_post__published_at" , :format=> '%B %d %Y') %>
 
+<%= render partial: 'spree/blogit/tags/tag', object: post.tag_list.first, locals: {is_head: @is_head = true} %>

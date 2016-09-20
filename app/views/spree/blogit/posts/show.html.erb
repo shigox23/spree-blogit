@@ -11,6 +11,8 @@
 
   <%# Render the body of this blog post (as Markdown) %>
   <%= format_content(@post.body) %>
+  
+  <p pubdate='true' class='blogit_post__published_at'><%= post.created_at.strftime("%B #{post.created_at.day.ordinalize} %Y") %> </p>
 
   <%# Render info about the person who wrote this post %>
   <%= share_bar_for_post @post %>
@@ -18,7 +20,8 @@
   <%# Render the no. of comments %>
   <%= render "spree/blogit/posts/comments_count", post: post if defined?(show_comments_count) and show_comments_count %>
 
-  <%= render "spree/blogit/posts/tags", post: @post %>
+  <%= render "spree/blogit/posts/tags", post: @post, locals: {is_head: @is_head = false}%>
+  
   <%= render "spree/blogit/posts/related", post: @post %>
 
   <%= comments_for_post @post %>
