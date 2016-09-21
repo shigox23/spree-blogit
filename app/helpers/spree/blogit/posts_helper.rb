@@ -10,7 +10,17 @@ module Spree
           content_tag(:h2, class: "blogit_post__header") {link_to(post.title, blog_post_path(post.id), class: "blogit_post__header_link")}
         end
       end
-
+      
+      def blog_breadcrumbs(taxon, separator="&nbsp;")
+        return "" if current_page?("/") || taxon.nil? || taxon.name == 'Categories' 
+        separator = raw(separator)
+        crumbs = []
+        crumbs << content_tag(:li, content_tag(:span, link_to(content_tag(:span, 'blog', itemprop: "name"), seo_url('/blog'), itemprop: "url") + separator, itemprop: "item"), itemscope: "itemscope", itemtype: "https://schema.org/ListItem", itemprop: "itemListElement")
+        crumbs << content_tag(:li, content_tag(:span, link_to(content_tag(:span, post.tag.first, itemprop: "name"), seo_url(ancestor), itemprop: "url") + separator, itemprop: "item"), itemscope: "itemscope", itemtype: "https://schema.org/ListItem", itemprop: "itemListElement")
+        crumb_list = content_tag(:ol, raw(crumbs.flatten.map{|li| li.mb_chars}.join), class: 'breadcrumb', itemscope: "itemscope", itemtype: "https://schema.org/BreadcrumbList")
+        content_tag(:nav, crumb_list, id: 'breadcrumbs', class: 'col-md-12')
+      end
+      
       require "spree_blogit/archive"
 
       # Renders the comments for a {Post} based on the
