@@ -1,8 +1,3 @@
 <div id="blogit_tags">
-  <h3 class="blogit_tags__header blogit_header--section">
-    <%= t :tags, :scope => 'blogit.posts' %>
-  </h3>
-  <ul class="blogit_tags__list">
-    <%= render partial: 'spree/blogit/tags/tag', collection: post.tag_list %>
-  </ul>
+  <%= render partial: 'spree/blogit/tags/tag', collection: post.tag_list %>
 </div>

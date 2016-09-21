@@ -93,7 +93,18 @@ h1.blogit_post__header{
     font-style: italic;
 }
 
-#blogit_tags,
+#blogit_tags {
+  clear: both;
+  margin: 20px 0;
+  text-align: center;
+  a {
+    color: #e26207;
+    font-size: 16px;
+    font-weight: 200;
+    padding: 0 6px
+  }
+}
+
 #blogit_related_posts,
 .blogit_comments_list,
 #comment_form {
