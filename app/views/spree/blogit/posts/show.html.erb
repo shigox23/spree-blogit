@@ -1,3 +1,5 @@
+<%= link_to 'Back to Blog', blog_root_path %>
+
 <% title @post.title %>
 <% description @post.description.to_s %>
 
@@ -12,7 +14,7 @@
   <%# Render the body of this blog post (as Markdown) %>
   <%= format_content(@post.body) %>
   
-  <p pubdate='true' class='blogit_post__published_at'><%= post.created_at.strftime("%B #{post.created_at.day.ordinalize} %Y") %> </p>
+  <p pubdate='true' class='blogit_post__published_at'><%= @post.created_at.strftime("%B #{@post.created_at.day.ordinalize} %Y") %> </p>
 
   <%# Render info about the person who wrote this post %>
   <%= share_bar_for_post @post %>

@@ -2,7 +2,7 @@ module Spree
   module Blogit
     module PostsHelper
     
-      # Shows the blog title as a link on the index page, and not on the post page
+      # Shows the blog title as a link on the index page and not on the post page
       def blog_title(post)
         if @post
           content_tag(:h1, class: "blogit_post__header") {post.title}
