@@ -54,7 +54,7 @@ module Spree
 
         def post_params
           if params[:blogit_post]
-            params.require(:blogit_post).permit(:title, :body, :tag_list, :state, :description)
+            params.require(:blogit_post).permit(:title, :slug, :body, :tag_list, :state, :description)
           else
             {}
           end

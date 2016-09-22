@@ -9,7 +9,7 @@
   });
 </script>
 
-<%= form_for @post, url: admin_blog_post_path(@post) do |f| %>
+<%= form_for @post, url: edit_admin_blog_post_path(@post.id) do |f| %>
 
   <%= render partial: 'form', locals: { f: f } %>
 

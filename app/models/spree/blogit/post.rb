@@ -19,6 +19,8 @@ module Spree
 
       validates :body,  presence: true, length: { minimum: 10 }
 
+      validates :slug,  presence: true, length: { minimum: 5 }
+
       validates :description, presence: SpreeBlogit.configuration.show_post_description
 
       validates :blogger_id, presence: true
@@ -78,7 +80,11 @@ module Spree
       end
 
       def to_param
-        slug
+        if Spree::Admin
+          id
+        else
+          slug
+        end
       end
 
       # The content of the Post to be shown in the RSS feed.

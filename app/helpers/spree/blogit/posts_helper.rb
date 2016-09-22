@@ -7,7 +7,7 @@ module Spree
         if @post
           content_tag(:h1, class: "blogit_post__header") {post.title}
         else
-          content_tag(:h2, class: "blogit_post__header") {link_to(post.title, blog_post_path(post.slug), class: "blogit_post__header_link")}
+          content_tag(:h2, class: "blogit_post__header") {link_to(post.title, blog_post_path(post.id), class: "blogit_post__header_link")}
         end
       end
 
