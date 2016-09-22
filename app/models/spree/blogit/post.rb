@@ -64,8 +64,8 @@ module Spree
       #
       # Returns a Blogit::Post
       # Raises ActiveRecord::NoMethodError if no Blogit::Post could be found
-      def self.active_with_id(id)
-        active.find(id)
+      def self.active_with_id(title)
+        active.find_by_slug(title)
       end
 
       # ====================
@@ -78,11 +78,7 @@ module Spree
       end
 
       def to_param
-        unless title.nil?
-          "#{id}-#{title.parameterize}"
-        end
-
-        id
+        slug
       end
 
       # The content of the Post to be shown in the RSS feed.

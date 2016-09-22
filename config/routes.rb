@@ -4,7 +4,7 @@ Spree::Core::Engine.routes.draw do
   get 'blog/tagged/:tag' => 'blogit/posts#tagged', as: :tagged_blog_posts
 
   namespace :blog, module: :blogit do
-    resources :posts do
+    resources :posts, param: :slug do
         resources :comments, only: [:create, :destroy]
     end
     get '/' => 'posts#index', as: :root

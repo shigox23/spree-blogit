@@ -60,7 +60,7 @@ module Spree
 
       # Set {#post} based on the :id param
       def set_post
-        @post = Spree::Blogit::Post.active_with_id(params[:id])
+        @post = Spree::Blogit::Post.active_with_id(params[:slug])
       end
 
       # The page parameter value for the current locale
