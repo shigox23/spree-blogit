@@ -1,9 +1,9 @@
-<h1><%= content_tag(:span, t(:blog_title, scope: 'blogit')) %></h1>
-
+<% if params[:tag].present? == false %>
+  <h1><%= content_tag(:span, t(:blog_title, scope: 'blogit')) %></h1>
+<% end %>
 <% if params[:tag] %>
-  <h2 class="blogit_header--page">
-    <%= t(:showing_posts_tagged_with, scope: "blogit.posts", tag: params[:tag])  %>
-  </h2>
+  <%= link_to '← All Blog Posts', blog_root_path, class: 'blogit-return'  %>
+  <%= content_tag(:h1, params[:tag].upcase, class: 'blogit-tag-title')  %>
 <% end %>
 
 <div class="blogit_posts_list row">

@@ -34,6 +34,15 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
 .blogit_header--page {
     font-size: 2em;
 }
+.blogit-tag-title {
+  text-align: center;
+  font-size: 36px;
+  color: #8a8a8a;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #C5C5C5;
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
 
 .row.blogit_posts_list {
     margin: 0;
@@ -74,11 +83,13 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
 h2.blogit_post__header,
 h1.blogit_post__header{
     margin: 0 0 1em;
-    font-size: 1.75em;
     max-width: 730px;
     margin: 0 auto;
     text-align: center;
     margin-bottom: 0;
+    color: #484848;
+    font-weight: 300;
+    font-size: 36px;
     .blogit_post__header_link {
       color: #484848;
       font-weight: 300;
