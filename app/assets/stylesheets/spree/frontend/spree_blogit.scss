@@ -11,6 +11,10 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
     padding: 0 30px 30px;
 }
 
+#blog .fits {
+  max-width: 730px;
+}
+
 .blogit_archive__list {
     padding: 0;
     list-style-type: none;
