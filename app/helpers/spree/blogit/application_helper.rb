@@ -24,6 +24,19 @@ module Spree
         content.to_s.html_safe
       end
 
+      def wrap_img_links(content = nil, post)
+        if content.include?('<img')
+          content = content.html_safe
+          start = content.index('<img')
+          substringy = content.slice(start..-1)
+          fin = substringy.index('>') + 1
+          finfin = fin + start
+          img = content.slice(start,fin)
+          content = (content.slice(0..start-1) + "<a href='"+ blog_post_path(post.slug) +"'> " + img + " </a>" + content.slice(finfin..-1)).html_safe
+        end
+        content
+      end
+
       # The first error message for an ActiveRecord::Base model instance attribute
       #
       # object    - An ActiveRecord::Base instance to check
