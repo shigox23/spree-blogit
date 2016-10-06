@@ -1,7 +1,7 @@
 Spree::Core::Engine.routes.draw do
   # Keep these above the posts resources block
   get 'blog/page/:page' => 'blogit/posts#index'
-  get 'blog/tagged/:tag' => 'blogit/posts#tagged', as: :tagged_blog_posts
+  get 'blog/category/:tag' => 'blogit/posts#tagged', as: :tagged_blog_posts
 
   patch	'/admin/blog/posts/:id/edit' => 'admin/blogit/posts#edit'
 

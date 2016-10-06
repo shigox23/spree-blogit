@@ -1,5 +1,5 @@
 <% if @is_head == true %>
-  <%= link_to tag.upcase, tagged_blog_posts_path(tag), class: "blogit-main-tag" %>
+  <%= link_to tag.upcase.gsub('-',' '), tagged_blog_posts_path(tag), class: "blogit-main-tag" %>
 <% else  %>
-  <%= link_to tag, tagged_blog_posts_path(tag), class: "blogit_tag__link" %>
+  <%= link_to tag.gsub('-',' '), tagged_blog_posts_path(tag), class: "blogit_tag__link" %>
 <% end %>

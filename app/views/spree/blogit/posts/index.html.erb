@@ -3,7 +3,7 @@
 <% end %>
 <% if params[:tag] %>
   <%= link_to '← All Blog Posts', blog_root_path, class: 'blogit-return'  %>
-  <%= content_tag(:h1, params[:tag].upcase, class: 'blogit-tag-title')  %>
+  <%= content_tag(:h1, params[:tag].upcase.gsub('-',' '), class: 'blogit-tag-title')  %>
 <% end %>
 
 <div class="blogit_posts_list row">

@@ -8,6 +8,7 @@ module Spree
       require "acts-as-taggable-on"
 
       acts_as_taggable
+      ActsAsTaggableOn.force_parameterize = true
 
       self.paginates_per(SpreeBlogit.configuration.posts_per_page)
 
