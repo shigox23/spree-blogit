@@ -32,7 +32,11 @@ module Spree
           fin = substringy.index('>') + 1
           finfin = fin + start
           img = content.slice(start,fin)
-          content = (content.slice(0..start-1) + "<a href='"+ blog_post_path(post.slug) +"'> " + img + " </a>" + content.slice(finfin..-1)).html_safe
+          first_half = content.slice(0..start-1)
+          if start == 0 # because slice always returns at least the first character so if img starts at the front this will set that side to empty
+            first_half = ''
+          end
+          content = (first_half + "<a href='"+ blog_post_path(post.slug) +"'> " + img + " </a>" + content.slice(finfin..-1)).html_safe
         end
         content
       end
