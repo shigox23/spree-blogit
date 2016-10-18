@@ -4,6 +4,6 @@ gem 'spree', github: 'spree/spree', branch: '3-1-stable'
 # Provides basic authentication functionality for testing parts of your engine
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '3-1-stable'
 
-gem 'acts-as-taggable-on', "~> 3.5.0"
+gem 'acts-as-taggable-on', '~> 4.0'
 
 gemspec
