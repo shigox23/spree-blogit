@@ -38,7 +38,7 @@ Gem::Specification.new do |s|
   s.add_dependency "albino", ">=1.3.3"
   s.add_dependency "kaminari"
   s.add_dependency "jquery-rails"
-  s.add_dependency "acts-as-taggable-on", "~> 3.5.0"
+  s.add_dependency "acts-as-taggable-on", "~> 4.0"
 
   s.add_development_dependency 'capybara', '~> 2.4'
   s.add_development_dependency 'coffee-rails'
@@ -60,9 +60,9 @@ Gem::Specification.new do |s|
   s.add_development_dependency "pry"
 
   # Databases
-  # s.add_development_dependency "sqlite3"
+  s.add_development_dependency "sqlite3"
   # s.add_development_dependency "mysql2"
-  s.add_development_dependency "pg"
+  # s.add_development_dependency "pg"
 
   # Testing
   s.add_development_dependency "codeclimate-test-reporter"
