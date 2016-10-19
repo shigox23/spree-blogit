@@ -7,7 +7,7 @@
 
   <%# Render the header for this blog post %>
   <%= render "spree/blog/posts/post_head", post: @post %>
-    <p pubdate='true' class='blog_post__published_at'><%= t(:written_by, scope: 'blog.posts', author: store.name) %> on <%= @post.created_at.strftime("%B #{post.created_at.day.ordinalize} %Y") %> </p>
+    <p pubdate='true' class='blog_post__published_at'><%= t(:written_by, scope: 'blog.posts', author: store.name) %> on <%= @post.created_at.strftime("%B #{@post.created_at.day.ordinalize} %Y") %> </p>
   <%#= render "spree/blog/posts/blogger_information", post: @post %>
 
   <%# Render the body of this blog post (as Markdown) %>
