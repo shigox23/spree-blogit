@@ -2,6 +2,7 @@ module SpreeBlogit
   class Engine < Rails::Engine
 
     require 'spree/core'
+    require 'acts-as-taggable-on'
 
     isolate_namespace Spree
 
