@@ -1,7 +1,7 @@
 <%= link_to '← All Blog Posts', blog_root_path, class: 'blog-return'  %>
 
 <% title @post.title %>
-<% description @post.description.to_s %>
+<%# description @post.description.to_s %>
 
 <%= content_tag(:article, id: "blog_post_#{@post.id}", class: "blog_post") do %>
 

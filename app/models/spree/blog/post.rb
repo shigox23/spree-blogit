@@ -93,13 +93,13 @@ module Spree
       #
       # Returns description when blog.configuration.show_post_description is true
       # Returns body when blog.configuration.show_post_description is false
-      def short_body
-        if SpreeBlog.configuration.show_post_description
-          description
-        else
-          body.first(5)
-        end
-      end
+      #def short_body
+      #   if SpreeBlog.configuration.show_post_description
+      #     description
+      #   else
+      #     body.first(5)
+      #   end
+      # end
 
       def comments
         check_comments_config

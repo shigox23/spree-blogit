@@ -12,13 +12,13 @@ module Spree
           end
         end
 
-        def description(content= nil)
-          if content
-            content_for(:description, content)
-          else
-            content_for(:description)
-          end
-        end
+      #  def description(content= nil)
+      #    if content
+      #      content_for(:description, content)
+      #    else
+      #      content_for(:description)
+      #    end
+      #  end
 
       end
 

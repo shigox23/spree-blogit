@@ -6,7 +6,7 @@
     <%= time_tag(post.created_at, pubdate: true, format: blog_conf.datetime_format) %>
   <% end %>
 
-  <%= render 'spree/admin/blog/posts/post_description', post: post %>
+  <%#= render 'spree/admin/blog/posts/post_description', post: post %>
 
   <% if SpreeBlog.configuration.include_comments == :active_record %>
     <%= content_tag :p, comments_count_for_post(post), :class => 'comments_count' %>

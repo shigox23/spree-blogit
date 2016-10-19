@@ -5,28 +5,28 @@
 <%= tag(:meta, property: "og:site_name", content: "") %>
 <%= tag(:meta, property: "og:url", content: url_for(params)) %>
 <%= tag(:meta, property: "og:title", content: title) %>
-<%= tag(:meta, property: "og:description", content: description) %>
+<%#= tag(:meta, property: "og:description", content: description) %>
 <%= tag(:meta, property: "og:type", content: "article") %>
-<% # TODO: Support images in blog (sorry) %> 
+<% # TODO: Support images in blog (sorry) %>
 <%= tag(:meta, property: "og:image", content: nil) %>
 
 <% for tag_name in post.tags.map(&:name) do%>
   <%= tag(:meta, property: "article:tag", content: tag_name) %>
 <% end %>
 
-<% # TODO: Support published time %> 
-<%= tag(:meta, property: "article:published_time", 
+<% # TODO: Support published time %>
+<%= tag(:meta, property: "article:published_time",
   content: post.created_at.to_s(:iso8601)) %>
 
-<%= tag(:meta, property: "article:modified_time", 
+<%= tag(:meta, property: "article:modified_time",
   content: post.updated_at.to_s(:iso8601)) %>
-  
+
 <!-- Twitter Card tags -->
 <%= tag(:meta, property: "twitter:card", content: "summary_large_image") %>
 <%= tag(:meta, property: "twitter:site", content: blog_conf.twitter_username) %>
-<%= tag(:meta, property: "twitter:creator", 
+<%= tag(:meta, property: "twitter:creator",
   content: post.blogger_twitter_username || blog_conf.twitter_username) %>
 <%= tag(:meta, property: "twitter:title", content: title) %>
 <%= tag(:meta, property: "twitter:description", content: description) %>
-<% # TODO: Support images in blog (sorry) %> 
+<% # TODO: Support images in blog (sorry) %>
 <%= tag(:meta, property: "twitter:time", content: nil) %>
