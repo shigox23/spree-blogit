@@ -5,7 +5,7 @@
   <%= render "spree/blog/posts/post_head", post: post %>
   <br>
   <p pubdate='true' class='blog_post__published_at'><%= post.created_at.strftime("%B #{post.created_at.day.ordinalize} %Y") %> </p>
-  <%# render "spree/blog/posts/blogger_information", post: post %>
+  <%= render "spree/blog/posts/blogger_information", post: post %>
   <%# Render the body of this blog post (as Markdown) %>
   <%= wrap_img_links(truncate(format_content(post.short_body), length: 50, omission: '...'){link_to "Read more", blog_post_path(post.slug)},post) %>
   <%# Render the no. of comments %>
