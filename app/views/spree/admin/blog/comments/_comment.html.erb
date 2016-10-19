@@ -1,20 +1,14 @@
 <%= content_tag(:div, id: "blog_admin_comment_#{comment.id}", class: "blog_admin_comment") do %>
-
-  <%= content_tag(:div, class: "blog_admin_comment-name") do %>
-    <%= name_tag_for_comment(comment) %>
-  <% end %>
-
-  <%= content_tag(:div, class: "blog_admin_comment-body") do %>
-    <%= format_content(comment.body || "") %>
-  <% end %>
-
-  <%= muted_text(class: "blog_admin_comment-time") do %>
-    <%= t(:posted_on, scope: 'blog.admin.comments') %>
-    <%= time_tag(comment.created_at, format: blog_conf.datetime_format) %>
-  <% end %>
-
-  <%= render partial: "spree/admin/blog/comments/admin_links", locals: { comment: comment, post: comment.post } %>
-
-  <hr class="blog_comment_spacer">
-
+    <%= content_tag(:div, class: "blog_admin_comment-name") do %>
+        <%= name_tag_for_comment(comment) %>
+    <% end %>
+    <%= content_tag(:div, class: "blog_admin_comment-body") do %>
+        <%= format_content(comment.body || "") %>
+    <% end %>
+    <%= muted_text(class: "blog_admin_comment-time") do %>
+        <%= t(:posted_on, scope: 'blog.admin.comments') %>
+        <%= time_tag(comment.created_at, format: blog_conf.datetime_format) %>
+    <% end %>
+    <%= render partial: "spree/admin/blog/comments/admin_links", locals: { comment: comment, post: comment.post } %>
+    <hr class="blog_comment_spacer">
 <% end %>

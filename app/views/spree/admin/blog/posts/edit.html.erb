@@ -1,21 +1,16 @@
 <%= render partial: 'spree/admin/shared/blog_post_tabs', locals: { current: :post } %>
-
 <script type="text/javascript">
     $(function () {
-        new SimpleMDE({element: document.getElementById('simplemde'), spellChecker: false});
-    });
+                        new SimpleMDE({element: document.getElementById('simplemde'), spellChecker: false});
+                    });
 </script>
-
 <%= form_for @post, url: admin_blog_post_path(@post.id) do |f| %>
-
-<%= render partial: 'form', locals: { f: f } %>
-
-<div class="form-actions">
-    <div class="form-actions" data-hook="buttons">
-        <%= button Spree.t('actions.update'), 'refresh', 'submit', {class: 'btn-success', data: { disable_with: "#{ Spree.t(:saving) }..." }} %>
-        <span class="or"><%= Spree.t(:or) %></span>
-        <%= button_link_to Spree.t('actions.cancel'), admin_blog_root_path, icon: 'delete' %>
+    <%= render partial: 'form', locals: { f: f } %>
+    <div class="form-actions">
+        <div class="form-actions" data-hook="buttons">
+            <%= button Spree.t('actions.update'), 'refresh', 'submit', {class: 'btn-success', data: { disable_with: "#{ Spree.t(:saving) }..." }} %>
+            <span class="or"><%= Spree.t(:or) %></span>
+            <%= button_link_to Spree.t('actions.cancel'), admin_blog_root_path, icon: 'delete' %>
+        </div>
     </div>
-</div>
-
 <% end %>

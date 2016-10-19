@@ -1,6 +1,5 @@
 <% unless blog_conf.author_edits_only and
    !post_by_this_blogger?(post, current_blogger) %>
-
 <div class="blog_post_actions">
     <%= link_to(t(:edit_post, scope: 'blog.admin.posts'), edit_post_path(post),
       class: "blog_post_actions-link") %>
@@ -9,11 +8,7 @@
       data: {
         confirm: t(:are_you_sure_you_want_to_remove_this_post,
           scope: 'blog.admin.posts') }) do %>
-
-    <%= t(:delete_post, scope: 'blog.admin.posts') %>
-
+        <%= t(:delete_post, scope: 'blog.admin.posts') %>
     <% end %>
-
 </div>
-
 <% end %>
