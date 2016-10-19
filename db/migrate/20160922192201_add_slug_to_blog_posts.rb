@@ -1,4 +1,4 @@
-class AddSlugToblogPosts < ActiveRecord::Migration
+class AddSlugToBlogPosts < ActiveRecord::Migration
   def change
     add_column :blog_posts, :slug, :string
   end
