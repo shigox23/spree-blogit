@@ -1,5 +1,6 @@
 Spree::Core::Engine.routes.draw do
   # Keep these above the posts resources block
+  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   get 'blog/page/:page' => 'blog/posts#index'
   get 'blog/category/:tag' => 'blog/posts#tagged', as: :tagged_blog_posts
 
@@ -22,8 +23,4 @@ Spree::Core::Engine.routes.draw do
     end
   end
 
-end
-
-Rails.application.routes.draw do
-  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
 end
