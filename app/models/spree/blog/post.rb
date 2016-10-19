@@ -23,7 +23,7 @@ module Spree
 
       validates :slug,  presence: true, length: { minimum: 5 }
 
-      validates :description, presence: SpreeBlog.configuration.show_post_description
+      # validates :description, presence: SpreeBlog.configuration.show_post_description
 
       validates :blogger_id, presence: true
 
@@ -97,7 +97,7 @@ module Spree
         if SpreeBlog.configuration.show_post_description
           description
         else
-          body
+          body.first(5)
         end
       end
 
