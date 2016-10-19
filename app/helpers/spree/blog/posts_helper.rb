@@ -11,6 +11,10 @@ module Spree
         end
       end
 
+      def store
+        store = Spree::Store.current
+      end
+
       require "spree_blog/archive"
 
       # Renders the comments for a {Post} based on the
