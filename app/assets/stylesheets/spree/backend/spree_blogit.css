@@ -12,7 +12,7 @@ article div.blog_post-blogger_info {
     font-style: italic;
 }
 
-#blogit_post_description {
+#blog_post_description {
     height: 10em;
 }
 
@@ -20,16 +20,16 @@ article div.blog_post-blogger_info {
     /*border: 1px solid #e0e0e0;*/
 /*}*/
 
-.blogit_admin_form-field_wrapper .muted_text {
+.blog_admin_form-field_wrapper .muted_text {
     margin-bottom: 20px;
 }
 
-div.blogit_admin_comment div.blogit_admin_comment-name {
+div.blog_admin_comment div.blog_admin_comment-name {
     margin: 1em 0;
     font-style: italic;
 }
 
-div.blogit_admin_comment div.blogit_admin_comment-time {
+div.blog_admin_comment div.blog_admin_comment-time {
     margin: 1em 0;
 }
 

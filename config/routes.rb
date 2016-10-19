@@ -1,11 +1,11 @@
 Spree::Core::Engine.routes.draw do
   # Keep these above the posts resources block
-  get 'blog/page/:page' => 'blogit/posts#index'
-  get 'blog/category/:tag' => 'blogit/posts#tagged', as: :tagged_blog_posts
+  get 'blog/page/:page' => 'blog/posts#index'
+  get 'blog/category/:tag' => 'blog/posts#tagged', as: :tagged_blog_posts
 
-  patch	'/admin/blog/posts/:id/edit' => 'admin/blogit/posts#edit'
+  patch	'/admin/blog/posts/:id/edit' => 'admin/blog/posts#edit'
 
-  namespace :blog, module: :blogit do
+  namespace :blog, module: :blog do
     resources :posts, param: :slug, only: :index do
         resources :comments, only: [:create, :destroy]
     end
@@ -14,7 +14,7 @@ Spree::Core::Engine.routes.draw do
   end
 
   namespace :admin do
-    namespace :blog, module: :blogit do
+    namespace :blog, module: :blog do
       resources :posts do
         resources :comments
       end

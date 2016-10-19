@@ -1,7 +1,7 @@
 require 'yaml'
 
-namespace :spree_blogit do
-  
+namespace :spree_blog do
+
   desc "Add a bunch of mock blog posts to the database for dev"
   task :seed => :environment do
     if Rails.env.production?
@@ -9,7 +9,7 @@ namespace :spree_blogit do
     else
       # load_all_models
       seed_blog_content.each do |blog_post_atts|
-        state = SpreeBlogit.configuration.active_states.first
+        state = Spreeblog.configuration.active_states.first
         begin
           blogger.first.blog_posts.create!(blog_post_atts.merge(state: state))
         rescue NoMethodError
@@ -18,18 +18,18 @@ namespace :spree_blogit do
       end
     end
   end
-  
+
   private
-  
+
   def seed_blog_content
     YAML.load(File.read(File.join(File.dirname(__FILE__), "seed_blog_posts.yml")))
   end
-  
-  
+
+
   # def load_all_models
   #   Dir[Rails.root.join("app/models/**/*.rb")].each { |file| load file }
   # end
-  
+
   # The fellow who's going to write these posts...
   def blogger
     Spree::User
@@ -37,5 +37,5 @@ namespace :spree_blogit do
     # ActiveRecord::Base.subclasses.detect(&:blogs?) ||
     #   warn("Can't seed your database, couldn't find a model that #blogs?")
   end
-  
+
 end

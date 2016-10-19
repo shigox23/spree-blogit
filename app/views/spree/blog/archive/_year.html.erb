@@ -1,0 +1,7 @@
+<li class="blog_archive__item blog_archive__item--year">
+  <%= link_to(year, '#', class: 'blog_archive__toggle_link',
+    data: { blog_click_to_toggle_children: true }) %>
+  <ul class="blog_archive__list blog_archive__list--months">
+    <%= render year.months %>
+  </ul>
+</li>

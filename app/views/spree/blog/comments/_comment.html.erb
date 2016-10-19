@@ -1,0 +1,16 @@
+<%= content_tag(:div, id: "blog_comment_#{comment.id}", class: "blog_comment " + cycle('odd', 'even')) do %>
+
+  <div class="blog_comment__name">
+    <%= name_for_comment(comment) %>
+  </div>
+
+  <div class="blog_comment__body">
+    <%= format_content(comment.body.to_s) %>
+  </div>
+
+  <div class="blog_comment__created_at">
+    <%= t(:posted_on, scope: 'blog.comments') %>
+    <%= time_tag(comment.created_at, format: blog_conf.datetime_format) %>
+  </div>
+
+<% end if comment.persisted? %>

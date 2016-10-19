@@ -1,6 +1,6 @@
 module Spree
   module Admin
-    module Blogit
+    module blog
 
       module LayoutHelper
 

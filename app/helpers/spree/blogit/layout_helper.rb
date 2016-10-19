@@ -1,5 +1,5 @@
 module Spree
-  module Blogit
+  module blog
     module LayoutHelper
 
       # Sets or returns the title for a page

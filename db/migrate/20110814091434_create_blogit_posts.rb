@@ -1,15 +1,15 @@
-class CreateBlogitPosts < ActiveRecord::Migration
+class CreateblogPosts < ActiveRecord::Migration
   def change
-    create_table :blogit_posts do |t|
+    create_table :blog_posts do |t|
       t.with_options(null: false) do |r|
         r.string :title
         r.text :body
-        r.string :state, default: SpreeBlogit::configuration.hidden_states.first.to_s
+        r.string :state, default: Spreeblog::configuration.hidden_states.first.to_s
         r.integer :comments_count, default: 0
       end
       t.references :blogger, polymorphic: true
       t.timestamps
     end
-    add_index :blogit_posts, [:blogger_type, :blogger_id]
+    add_index :blog_posts, [:blogger_type, :blogger_id]
   end
 end

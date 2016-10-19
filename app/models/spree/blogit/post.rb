@@ -1,8 +1,8 @@
 module Spree
-  module Blogit
+  module blog
     class Post < ActiveRecord::Base
 
-      self.table_name = "blogit_posts"
+      self.table_name = "blog_posts"
 
       require "kaminari"
       require "acts-as-taggable-on"
@@ -10,7 +10,7 @@ module Spree
       acts_as_taggable
       ActsAsTaggableOn.force_parameterize = true
 
-      self.paginates_per(SpreeBlogit.configuration.posts_per_page)
+      self.paginates_per(Spreeblog.configuration.posts_per_page)
 
       # ===============
       # = Validations =
@@ -22,7 +22,7 @@ module Spree
 
       validates :slug,  presence: true, length: { minimum: 5 }
 
-      validates :description, presence: SpreeBlogit.configuration.show_post_description
+      validates :description, presence: Spreeblog.configuration.show_post_description
 
       validates :blogger_id, presence: true
 
@@ -42,7 +42,7 @@ module Spree
       # The {Comment Comments} written on this Post
       #
       # Returns an ActiveRecord::Relation instance
-      has_many :comments, :class_name => 'Spree::Blogit::Comment'
+      has_many :comments, :class_name => 'Spree::blog::Comment'
 
       # ==========
       # = Scopes =
@@ -51,7 +51,7 @@ module Spree
       scope :for_index, lambda { |page_no = 1|
         active.order("created_at DESC").page(page_no) }
 
-      scope :active, lambda { where(state:  SpreeBlogit.configuration.active_states ) }
+      scope :active, lambda { where(state:  Spreeblog.configuration.active_states ) }
 
 
       # The posts to be displayed for RSS and XML feeds/sitemaps
@@ -65,8 +65,8 @@ module Spree
       #
       # id - The id of the Post to find
       #
-      # Returns a Blogit::Post
-      # Raises ActiveRecord::NoMethodError if no Blogit::Post could be found
+      # Returns a blog::Post
+      # Raises ActiveRecord::NoMethodError if no blog::Post could be found
       def self.active_with_id(title)
         active.find_by_slug(title)
       end
@@ -90,10 +90,10 @@ module Spree
 
       # The content of the Post to be shown in the RSS feed.
       #
-      # Returns description when Blogit.configuration.show_post_description is true
-      # Returns body when Blogit.configuration.show_post_description is false
+      # Returns description when blog.configuration.show_post_description is true
+      # Returns body when blog.configuration.show_post_description is false
       def short_body
-        if SpreeBlogit.configuration.show_post_description
+        if Spreeblog.configuration.show_post_description
           description
         else
           body
@@ -118,11 +118,11 @@ module Spree
       # Raises a ConfigurationError if the method called is not defined on {#blogger}
       def blogger_display_name
         return "" if blogger.blank?
-        if blogger.respond_to?(SpreeBlogit.configuration.blogger_display_name_method)
-          blogger.send(SpreeBlogit.configuration.blogger_display_name_method)
+        if blogger.respond_to?(Spreeblog.configuration.blogger_display_name_method)
+          blogger.send(Spreeblog.configuration.blogger_display_name_method)
         else
-          method_name = SpreeBlogit.configuration.blogger_display_name_method
-          raise SpreeBlogit::ConfigurationError, "#{blogger.class}##{method_name} is not defined"
+          method_name = Spreeblog.configuration.blogger_display_name_method
+          raise Spreeblog::ConfigurationError, "#{blogger.class}##{method_name} is not defined"
         end
       end
 
@@ -142,9 +142,9 @@ module Spree
 
 
       def check_comments_config
-        unless SpreeBlogit.configuration.include_comments == :active_record
+        unless Spreeblog.configuration.include_comments == :active_record
           raise RuntimeError,
-            "Posts only allow active record comments (check blogit configuration)"
+            "Posts only allow active record comments (check blog configuration)"
         end
       end
 

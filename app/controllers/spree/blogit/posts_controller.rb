@@ -1,12 +1,12 @@
 module Spree
-  module Blogit
+  module blog
 
-    # Handles requests for viewing Blogit::Posts
-    class PostsController < Spree::Blogit::ApplicationController
+    # Handles requests for viewing blog::Posts
+    class PostsController < Spree::blog::ApplicationController
 
-      # The current Blogit::Post being displayed.
+      # The current blog::Post being displayed.
       #
-      # Returns a Blogit::Post with id from params
+      # Returns a blog::Post with id from params
       attr_reader :post
 
       # The current Posts being displayed
@@ -15,9 +15,9 @@ module Spree
       attr_reader :posts
 
       # If a layout is specified, use that. Otherwise, fall back to the default
-      layout SpreeBlogit.configuration.layout if SpreeBlogit.configuration.layout
+      layout Spreeblog.configuration.layout if Spreeblog.configuration.layout
 
-      # Handles GET requests to /blogit/posts.html, /blogit/posts.xml, and /blogit/posts.rss
+      # Handles GET requests to /blog/posts.html, /blog/posts.xml, and /blog/posts.rss
       # Possible formats include:
       #
       # "XML" -  calls {#set_posts_for_feed}.
@@ -36,7 +36,7 @@ module Spree
         yield(posts) if block_given?
       end
 
-      # Handles GET requests to /blogit/posts/:id.html
+      # Handles GET requests to /blog/posts/:id.html
       #
       # Yields #post if called with a block (useful for calling super from subclasses)
       def show
@@ -44,7 +44,7 @@ module Spree
         yield post if block_given?
       end
 
-      # Handles GET requests to /blogit/posts/tagged/:tag.html. Renders the index template
+      # Handles GET requests to /blog/posts/tagged/:tag.html. Renders the index template
       # with Posts tagged with tag in *tag* parameter
       #
       # Yields #posts if called with a block (useful for calling super from subclasses)
@@ -60,7 +60,7 @@ module Spree
 
       # Set {#post} based on the :id param
       def set_post
-        @post = Spree::Blogit::Post.active_with_id(params[:slug])
+        @post = Spree::blog::Post.active_with_id(params[:slug])
       end
 
       # The page parameter value for the current locale
@@ -70,7 +70,7 @@ module Spree
 
       # Sets {#posts} for the XML feed
       def set_posts_for_feed
-        @posts ||= Spree::Blogit::Post.for_feed
+        @posts ||= Spree::blog::Post.for_feed
       end
 
       # Sets {#posts} for the HTML index page
@@ -78,7 +78,7 @@ module Spree
       # tag - The tag name to filter Posts by (default: nil)
       #
       def set_posts_for_index_page(tag = nil)
-        @posts ||= Spree::Blogit::Post.for_index(page_number)
+        @posts ||= Spree::blog::Post.for_index(page_number)
       end
 
       # Sets {#posts} for the HTML index page when a tag parameter is present

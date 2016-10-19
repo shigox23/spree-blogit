@@ -1,0 +1,24 @@
+<% if params[:tag].present? == false %>
+  <h1><%= content_tag(:span, t(:blog_title, scope: 'blog')) %></h1>
+<% end %>
+<% if params[:tag] %>
+  <%= link_to '← All Blog Posts', blog_root_path, class: 'blog-return'  %>
+  <%= content_tag(:h1, params[:tag].upcase.gsub('-',' '), class: 'blog-tag-title')  %>
+<% end %>
+
+<div class="blog_posts_list row">
+  <% if @posts.any? %>
+    <%= render partial: "spree/blog/posts/post",
+      collection: @posts,
+      spacer_template: "blog_post_spacer",
+      locals: {
+        show_comments_count: (Spreeblog.configuration.include_comments == :active_records)
+      }  %>
+  <% else %>
+
+    <%= render partial: "spree/blog/posts/empty" %>
+
+  <% end %>
+</div>
+
+<%= render "pagination" %>

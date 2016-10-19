@@ -1,0 +1,2 @@
+<%= blog_title(post) %>
+<%= render partial: 'spree/blog/tags/tag', object: post.tag_list.first, locals: {is_head: @is_head = true} %>

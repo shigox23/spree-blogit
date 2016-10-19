@@ -1,7 +1,7 @@
 module Spree
   module Admin
-    module Blogit
-      class CommentsController < Spree::Admin::Blogit::ApplicationController
+    module blog
+      class CommentsController < Spree::Admin::blog::ApplicationController
 
         def index
           @comments = post.comments.order('created_at DESC')
@@ -18,9 +18,9 @@ module Spree
 
             format.html {
               if @comment.save
-                redirect_to admin_blog_post_comments_url(post), notice: t(:successfully_added_comment, scope: 'blogit.comments')
+                redirect_to admin_blog_post_comments_url(post), notice: t(:successfully_added_comment, scope: 'blog.comments')
               else
-                render 'spree/blogit/admin/posts/show'
+                render 'spree/blog/admin/posts/show'
               end
             }
 
@@ -31,7 +31,7 @@ module Spree
         def destroy
           @comment = post.comments.find(params[:id])
           @comment.destroy
-          redirect_to admin_blog_post_comments_url(post), notice: t(:successfully_removed_comment, scope: 'blogit.comments')
+          redirect_to admin_blog_post_comments_url(post), notice: t(:successfully_removed_comment, scope: 'blog.comments')
         end
 
         private
@@ -41,7 +41,7 @@ module Spree
         end
 
         def post
-          @post ||= Spree::Blogit::Post.find(params[:post_id])
+          @post ||= Spree::blog::Post.find(params[:post_id])
         end
 
       end

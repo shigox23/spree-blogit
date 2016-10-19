@@ -1,6 +1,6 @@
 module Spree
   module Admin
-    module Blogit
+    module blog
 
       module PostsHelper
         def post_by_this_blogger?(post, blogger)

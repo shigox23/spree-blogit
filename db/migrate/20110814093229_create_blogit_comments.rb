@@ -1,6 +1,6 @@
-class CreateBlogitComments < ActiveRecord::Migration
+class CreateblogComments < ActiveRecord::Migration
   def change
-    create_table :blogit_comments do |t|
+    create_table :blog_comments do |t|
       t.string :name, null: false
       t.string :email, null: false
       t.string :website
@@ -10,6 +10,6 @@ class CreateBlogitComments < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :blogit_comments, :post_id
+    add_index :blog_comments, :post_id
   end
 end

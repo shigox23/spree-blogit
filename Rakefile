@@ -17,7 +17,7 @@ end
 
 desc 'Generates a dummy app for testing'
 task :test_app do
-  ENV['LIB_NAME'] = 'spree_blogit'
+  ENV['LIB_NAME'] = 'spree_blog'
   Rake::Task['extension:test_app'].invoke
 end
 
@@ -27,7 +27,7 @@ end
 #
 # require "rubygems"
 # require 'bundler/setup'
-# require "blogit/version"
+# require "blog/version"
 # require 'rspec/core'
 # require 'rspec/core/rake_task'
 #

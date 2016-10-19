@@ -1,25 +1,25 @@
 module Spree
   module Admin
-    module Blogit
+    module blog
 
 
       # Inherits from the application's controller instead of ActionController::Base
-      class ApplicationController < ResourceController #SpreeBlogit.configuration.admin_application_controller_base_class.constantize
+      class ApplicationController < ResourceController #Spreeblog.configuration.admin_application_controller_base_class.constantize
 
-        def self.blogit_conf
-          SpreeBlogit.configuration
+        def self.blog_conf
+          Spreeblog.configuration
         end
 
-        def blogit_conf
-          self.class.blogit_conf
+        def blog_conf
+          self.class.blog_conf
         end
 
-        #layout blogit_conf.admin_layout
-        helper Spree::Blogit::ApplicationHelper, Spree::Admin::Blogit::CommentsHelper,
-          Spree::Admin::Blogit::PostsHelper, Spree::Admin::Blogit::LayoutHelper
+        #layout blog_conf.admin_layout
+        helper Spree::blog::ApplicationHelper, Spree::Admin::blog::CommentsHelper,
+          Spree::Admin::blog::PostsHelper, Spree::Admin::blog::LayoutHelper
 
 
-        helper_method :blogit_conf, :current_blogger
+        helper_method :blog_conf, :current_blogger
 
 
         private
@@ -31,11 +31,11 @@ module Spree
           else
             raise NotImplementedError,
               "Please define :authenticate_blogger in your ApplicationController.\
-                Spree::Admin::Blogit needs this to determine who's signed in."
+                Spree::Admin::blog needs this to determine who's signed in."
           end
         end
 
-        def blogit_admin_sign_in_url
+        def blog_admin_sign_in_url
           new_session_url
         end
 
@@ -48,7 +48,7 @@ module Spree
           # else
           #   raise NotImplementedError,
           #     "Please define :current_blogger in your ApplicationController.\
-          #       Spree::Admin::Blogit needs this to determine who's signed in."
+          #       Spree::Admin::blog needs this to determine who's signed in."
           # end
         end
       end

@@ -1,0 +1,22 @@
+var $form = $('form.blog_form');
+<% if @comment.save %>
+
+  last_comment = $('.blog_comments_list .blog_comment').last();
+
+  if (last_comment.length) {
+    last_parity = last_comment.attr('class').replace('blog_comment ', '');
+    new_parity = last_parity == 'even' ? 'odd' : 'even';
+  } else {
+    new_parity = 'odd';
+  }
+
+  new_comment = '<%= escape_javascript(render(@comment)) %>';
+  comment_obj = $('<div/>').html(new_comment).contents();
+  comment_obj.removeClass('even odd').addClass(new_parity);
+
+  $('.blog_comments_list').append(comment_obj);
+
+  $form.get(0).reset();
+<% else %>
+  $form.html("<%= escape_javascript(render(partial:'form', locals: { post: @comment.post, comment: @comment })) %>");
+<% end %>

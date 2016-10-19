@@ -15,30 +15,30 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
   max-width: 730px;
 }
 
-.blogit_archive__list {
+.blog_archive__list {
     padding: 0;
     list-style-type: none;
 }
 
-.blogit_archive__list--months {
+.blog_archive__list--months {
     padding-left: 0.5em;
     display: none;
 }
 
-.blogit_archive__list--archiveables {
+.blog_archive__list--archiveables {
     margin-bottom: 0.5em;
     padding-left: 0.5em;
     display: none;
 }
 
-.blogit_archive__item--post {
+.blog_archive__item--post {
     margin: 0.5em 0;
 }
 
-.blogit_header--page {
+.blog_header--page {
     font-size: 2em;
 }
-.blogit-tag-title {
+.blog-tag-title {
   text-align: center;
   font-size: 36px;
   color: #8a8a8a;
@@ -48,11 +48,11 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
   margin-top: 0px;
 }
 
-.row.blogit_posts_list {
+.row.blog_posts_list {
     margin: 0;
 }
 
-.blogit_post {
+.blog_post {
     font-size: 1.2em;
     line-height: 2em;
     p {
@@ -65,11 +65,11 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
     }
 }
 
-.blogit_post__published_at {
+.blog_post__published_at {
   text-align: center;
 }
 
-.blogit_post h2 {
+.blog_post h2 {
     font-size: 1.5em;
     margin: 0 auto;
     margin-bottom: 1em;
@@ -77,15 +77,15 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
     max-width: 730px;
 }
 
-.blogit_post h3 {
+.blog_post h3 {
     margin: 0 auto;
     margin-bottom: 1em;
     margin-top: .7em;
     max-width: 730px;
 }
 
-h2.blogit_post__header,
-h1.blogit_post__header{
+h2.blog_post__header,
+h1.blog_post__header{
     margin: 0 0 1em;
     max-width: 730px;
     margin: 0 auto;
@@ -94,21 +94,21 @@ h1.blogit_post__header{
     color: #484848;
     font-weight: 300;
     font-size: 36px;
-    .blogit_post__header_link {
+    .blog_post__header_link {
       color: #484848;
       font-weight: 300;
       font-size: 36px;
     }
 }
 
-.blogit_post__information {
+.blog_post__information {
     margin: 10px 0 30px;
     padding: 10px 15px;
     background: #ededed;
     font-style: italic;
 }
 
-#blogit_tags {
+#blog_tags {
   clear: both;
   margin: 20px 0;
   text-align: center;
@@ -120,38 +120,38 @@ h1.blogit_post__header{
   }
 }
 
-#blogit_related_posts,
-.blogit_comments_list,
+#blog_related_posts,
+.blog_comments_list,
 #comment_form {
     clear: both;
     border-top: 1px solid silver;
     margin: 20px 0;
 }
 
-#blogit_tags .blogit_tags__list {
+#blog_tags .blog_tags__list {
     margin: 0;
     padding: 0;
 }
 
-#blogit_tags .blogit_tags__list .blogit_tag {
+#blog_tags .blog_tags__list .blog_tag {
     display: inline-block;
     list-style: none;
     font-size: 1.2em;
 }
 
-#blogit_tags .blogit_tags__list .blogit_tag a {
+#blog_tags .blog_tags__list .blog_tag a {
     color: white;
 }
 
-#blogit_tags .blogit_tags__list .blogit_tag a:hover {
+#blog_tags .blog_tags__list .blog_tag a:hover {
     text-decoration: none;
 }
 
-.blogit_tags__list .header {
+.blog_tags__list .header {
 
 }
 
-.blogit-main-tag {
+.blog-main-tag {
   max-width: 730px;
   text-align: center;
   margin: 0 auto;
@@ -166,38 +166,38 @@ h1.blogit_post__header{
     display: inline;
 }
 
-.blogit_related_posts__list .blogit_related_post {
+.blog_related_posts__list .blog_related_post {
     font-size: 1.2em;
 }
 
-.blogit_comments_list {
+.blog_comments_list {
     margin: 20px 0;
 }
 
-.blogit_comment {
+.blog_comment {
     margin: 20px 0;
     padding: 15px;
     font-size: .9em;
 }
 
-.blogit_comment.odd {
+.blog_comment.odd {
     background: #ededed;
 }
 
-.blogit_comment__name {
+.blog_comment__name {
     margin: 0 0 1em;
     font-style: italic;
 }
 
-.blogit_comment__created_at {
+.blog_comment__created_at {
     font-style: italic;
 }
 
-#comment_form #blogit_comment_body {
+#comment_form #blog_comment_body {
     height: 8em;
 }
 
-.blogit-return {
+.blog-return {
   margin-top: 15px;
   display: inline-block;
 }

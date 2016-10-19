@@ -1,8 +1,8 @@
 module Spree
-  module Blogit
+  module blog
     module ApplicationHelper
 
-      # Format content using the {Blogit::Configuration#default_parser_class default_parser_class}
+      # Format content using the {blog::Configuration#default_parser_class default_parser_class}
       #
       # content - A String containing the content to be formatted (defaults: nil)
       # block   - A Proc that returns a String of content to be formatted
@@ -20,7 +20,7 @@ module Spree
       # Returns an HTML safe String.
       def format_content(content = nil, &block)
         content = capture(&block) if block_given?
-        parser  = SpreeBlogit::configuration.default_parser_class.new(content)
+        parser  = Spreeblog::configuration.default_parser_class.new(content)
         content.to_s.html_safe
       end
 
@@ -54,7 +54,7 @@ module Spree
       # Returns a String with the error message
       def errors_on(object, attribute)
         error_message = object.errors[attribute].first
-        content_tag(:span, error_message, class: "blogit_error_message") if error_message
+        content_tag(:span, error_message, class: "blog_error_message") if error_message
       end
 
       # A helper method for creating a div tag with class 'field'. Used for separating

@@ -1,0 +1,14 @@
+<%= content_tag(:article, id: "blog_post_#{post.id}",
+  class: "blog_post blog_post--is_preview") do %>
+
+  <%# Render the header for this blog post %>
+  <%= render "spree/blog/posts/post_head", post: post %>
+
+  <%# render "spree/blog/posts/blogger_information", post: post %>
+
+  <%# Render the body of this blog post (as Markdown) %>
+  <%= wrap_img_links(format_content(post.short_body),post) %>
+
+  <%# Render the no. of comments %>
+  <%= render "spree/blog/posts/comments_count", post: post if defined?(show_comments_count) and show_comments_count %>
+<% end %>

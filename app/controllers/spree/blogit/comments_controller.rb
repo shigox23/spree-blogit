@@ -1,12 +1,12 @@
 module Spree
-  module Blogit
+  module blog
 
-    # Handles requests for creating Blogit::Comments
-    class CommentsController < Spree::Blogit::ApplicationController
+    # Handles requests for creating blog::Comments
+    class CommentsController < Spree::blog::ApplicationController
 
       # Accessor method for the comment being created
       #
-      # Returns a Blogit::Comment
+      # Returns a blog::Comment
       attr_reader :comment
 
       # Accessor method for the Post we're adding a Comment to
@@ -14,7 +14,7 @@ module Spree
       # Returns Post
       attr_reader :post
 
-      # Handles POST requests to /blogit/comments.html and /blogit/comments.js
+      # Handles POST requests to /blog/comments.html and /blog/comments.js
       #
       # Yields #comment if called with a block (useful for calling super from subclasses)
       def create
@@ -33,7 +33,7 @@ module Spree
 
       # Set this controller's post attribute to the current Post
       def set_post_from_post_id
-        @post = Blogit::Post.active_with_id(params[:post_id])
+        @post = blog::Post.active_with_id(params[:post_id])
       end
 
       # Set this controller's comment attribute as a new comment with params
@@ -50,9 +50,9 @@ module Spree
       def create_respond_to_html
         if comment.persisted?
           redirect_to(post,
-            notice: t(:successfully_added_comment, scope: 'blogit.comments'))
+            notice: t(:successfully_added_comment, scope: 'blog.comments'))
         else
-          render "spree/blogit/posts/show"
+          render "spree/blog/posts/show"
         end
       end
 
