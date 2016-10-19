@@ -20,8 +20,8 @@
   <%#= f.label :slug, t(:post_slug, scope: "blog.admin.posts") %> <span class="required">*</span>
   <%#= f.text_field :slug, :class => 'form-control', :required => true %>
 <%# end %>
-
 -->
+
 <%= f.field_container :description, class: ['form-group'] do %>
   <%= f.label :description, t(:post_description, scope: "blog.admin.posts") %> <span class="required">*</span>
   <%= f.text_area :description, placeholder: t(:write_a_brief_overview_of_your_post, scope: 'blog.admin.posts'), :class => 'form-control', :required => true %>
