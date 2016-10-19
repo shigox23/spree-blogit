@@ -1,8 +1,6 @@
 module Spree
   module Admin
     module Blog
-
-      require 'bootsy'
       # Inherits from the application's controller instead of ActionController::Base
       class ApplicationController < ResourceController #SpreeBlog.configuration.admin_application_controller_base_class.constantize
 
@@ -55,5 +53,4 @@ module Spree
 
     end
   end
-  helper Bootsy::Engine.helpers
 end
