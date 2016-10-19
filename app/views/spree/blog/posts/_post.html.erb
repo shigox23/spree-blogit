@@ -8,7 +8,7 @@
 
   <%# Render the body of this blog post (as Markdown) %>
   <%#= wrap_img_links(format_content(post.short_body),post) %>
-
+  <%= wrap_img_links(truncate(post.body, length: 5, :omission => '... (Read More)'),post) %>
   <%# Render the no. of comments %>
   <%= render "spree/blog/posts/comments_count", post: post if defined?(show_comments_count) and show_comments_count %>
 <% end %>
