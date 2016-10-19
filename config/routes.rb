@@ -10,7 +10,7 @@ Spree::Core::Engine.routes.draw do
     resources :posts, param: :slug, only: :index do
         resources :comments, only: [:create, :destroy]
     end
-    get '/blog' => 'posts#index', as: :root
+    get '/' => 'posts#index', as: :root
     get '/:slug' => 'posts#show', as: :post
   end
 
@@ -19,7 +19,7 @@ Spree::Core::Engine.routes.draw do
       resources :posts do
         resources :comments
       end
-      get '/blog' => 'posts#index', as: :root
+      get '/' => 'posts#index', as: :root
     end
   end
 end
