@@ -7,7 +7,11 @@ module Spree
         include Spree::Admin::Blog::PostsHelper
 
         attr_accessor :post
-        store = Spree::Store.current
+        before_filter :set_store
+
+        def set_store
+           @store = Spree::Store.current
+        end
 
         def index
           set_posts
