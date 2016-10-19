@@ -22,9 +22,10 @@ bundle exec rails g spree_blog:install
 ```
 
 
-You don't need to run this again if you've already done so
+If you have already installed the acts-as-taggable-on & bootsy gem you do not need to run the following command:
 ```shell
 bundle exec rake acts_as_taggable_on_engine:install:migrations
+bundle exec rake bootsy:install:migrations
 ```
 
 This will run any pending migrations
