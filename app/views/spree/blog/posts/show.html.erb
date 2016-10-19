@@ -12,7 +12,7 @@
 
   <%# Render the body of this blog post (as Markdown) %>
   <%= format_content(@post.body) %>
-
+  <br>
   <!-- <p pubdate='true' class='blog_post__published_at'><%#= @post.created_at.strftime("%B #{@post.created_at.day.ordinalize} %Y") %> </p> -->
 
   <%#= render "spree/blog/posts/tags", post: @post, locals: {is_head: @is_head = false}%>
