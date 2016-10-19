@@ -28,7 +28,7 @@
 
 <%= f.field_container :body, class: ['form-group'] do %>
   <%= f.label :body, t(:post_body, scope: 'blog.admin.posts') %> <span class="required">*</span>
-  <%= f.bootsy_area :body, id: "SimpleMDE" %>
+  <%= f.bootsy_area :body, id: "SimpleMDE", height: "100%", width: "100%" %>
 <% end %>
 
 <%= f.field_container :tag_list, id: "new_blog_post_tag_field", class: ['form-group'] do %>
