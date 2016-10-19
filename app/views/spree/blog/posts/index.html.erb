@@ -1,6 +1,6 @@
-<% if params[:tag].present? == false %>
-  <h1><%= content_tag(:span, t(:blog_title, scope: 'blog')) %></h1>
-<% end %>
+<!-- <%# if params[:tag].present? == false %>
+  <h1><%#= content_tag(:span, t(:blog_title, scope: 'blog')) %></h1>
+<%# end %> -->
 <% if params[:tag] %>
   <%= link_to '← All Blog Posts', blog_root_path, class: 'blog-return'  %>
   <%= content_tag(:h1, params[:tag].upcase.gsub('-',' '), class: 'blog-tag-title')  %>
