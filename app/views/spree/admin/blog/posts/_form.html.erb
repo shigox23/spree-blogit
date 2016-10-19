@@ -12,15 +12,15 @@
 
 <%= f.field_container :title, class: ['form-group'] do %>
   <%= f.label :title, t(:post_title, scope: "blog.admin.posts") %> <span class="required">*</span>
-  <%= f.text_field :title, placeholder: t(:give_your_post_a_title, scope: 'blog.admin.posts'), :class => 'form-control', :required => true %>
+  <%= f.text_field :title :slug, placeholder: t(:give_your_post_a_title, scope: 'blog.admin.posts'), :class => 'form-control', :required => true %>
 <% end %>
 
-<!-- <a class="btn btn-primary" id="slug-slime"><span class="glyphicon glyphicon-hand-down"></span></a> -->
-
-<%= f.field_container :slug, class: ['form-group'] do %>
-  <%= f.label :slug, t(:post_slug, scope: "blog.admin.posts") %> <span class="required">*</span>
-  <%= f.text_field :slug, :class => 'form-control', :required => true %>
-<% end %>
+<!-- <a class="btn btn-primary" id="slug-slime"><span class="glyphicon glyphicon-hand-down"></span></a>
+<%#= f.field_container :slug, class: ['form-group'] do %>
+  <%#= f.label :slug, t(:post_slug, scope: "blog.admin.posts") %> <span class="required">*</span>
+  <%#= f.text_field :slug, :class => 'form-control', :required => true %>
+<%# end %>
+-->
 
 <%= f.field_container :description, class: ['form-group'] do %>
   <%= f.label :description, t(:post_description, scope: "blog.admin.posts") %> <span class="required">*</span>
