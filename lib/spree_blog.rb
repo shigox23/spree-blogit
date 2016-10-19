@@ -3,6 +3,7 @@ require 'spree_core'
 # Third-party requirements
 require "kaminari"
 require "redcarpet"
+require 'bootsy'
 
 require "spree_blog/configuration"
 require "spree_blog/blogs"
