@@ -94,8 +94,8 @@ module Spree
       # Returns description when blog.configuration.show_post_description is true
       # Returns body when blog.configuration.show_post_description is false
       def short_body
-         truncate(body, length: 5, omission: '... (Read More)')
-       end
+         body
+      end
 
       def comments
         check_comments_config
