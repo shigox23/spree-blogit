@@ -1,4 +1,4 @@
-module Spreeblog
+module SpreeBlog
   module Archive
     class Year
 

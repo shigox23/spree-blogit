@@ -1,4 +1,4 @@
-module Spreeblog
+module SpreeBlog
   class Engine < Rails::Engine
 
     require 'spree/core'
@@ -24,7 +24,7 @@ module Spreeblog
 
     initializer "spree_blog.extend_active_record" do
       if defined?(::ActiveRecord::Base)
-        ::ActiveRecord::Base.send(:include, Spreeblog::Blogs)
+        ::ActiveRecord::Base.send(:include, SpreeBlog::Blogs)
         ::ActiveRecord::Base.send(:include, Validators)
       end
     end

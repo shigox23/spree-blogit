@@ -14,7 +14,7 @@ module Spree
       #
       # Returns a blog::Configuration
       def self.blog_conf
-        Spreeblog::configuration
+        SpreeBlog::configuration
       end
 
       # A helper method to access the {blog::configuration} at the controller instance

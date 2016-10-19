@@ -122,7 +122,7 @@ module Spree
           blogger.send(Spreeblog.configuration.blogger_display_name_method)
         else
           method_name = Spreeblog.configuration.blogger_display_name_method
-          raise Spreeblog::ConfigurationError, "#{blogger.class}##{method_name} is not defined"
+          raise SpreeBlog::ConfigurationError, "#{blogger.class}##{method_name} is not defined"
         end
       end
 

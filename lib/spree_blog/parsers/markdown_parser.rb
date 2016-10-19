@@ -1,4 +1,4 @@
-class Spreeblog::Parsers::MarkdownParser
+class SpreeBlog::Parsers::MarkdownParser
 
   require "nokogiri"
   require "spree_blog/renderers"
@@ -14,7 +14,7 @@ class Spreeblog::Parsers::MarkdownParser
   #
   # Returns an HTML safe String
   def parsed
-    ensure_pygments_is_installed if Spreeblog::configuration.highlight_code_syntax
+    ensure_pygments_is_installed if SpreeBlog::configuration.highlight_code_syntax
     markdown.render(content).html_safe
   end
 
@@ -24,8 +24,8 @@ class Spreeblog::Parsers::MarkdownParser
 
   # The Redcarpet renderer to use
   def renderer
-    if Spreeblog::configuration.highlight_code_syntax
-      Spreeblog::Renderers.choose_highlight_renderer
+    if SpreeBlog::configuration.highlight_code_syntax
+      SpreeBlog::Renderers.choose_highlight_renderer
     else
       Redcarpet::Render::HTML
     end

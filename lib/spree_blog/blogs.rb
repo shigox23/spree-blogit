@@ -1,4 +1,4 @@
-module Spreeblog
+module SpreeBlog
   module Blogs
 
     extend ActiveSupport::Concern

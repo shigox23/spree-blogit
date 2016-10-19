@@ -50,7 +50,7 @@ module Spree
       #
       # Returns an HTML safe String
       def archive_list_for_posts(archive_posts)
-        render Spreeblog::Archive::List.new(archive_posts)
+        render SpreeBlog::Archive::List.new(archive_posts)
       end
 
     end

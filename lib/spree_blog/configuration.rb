@@ -1,4 +1,4 @@
-module Spreeblog
+module SpreeBlog
 
   # This class handles the global configuration options for blog.
   #  When you run `rails g blog:install` this will add an initializer file to
@@ -134,7 +134,7 @@ module Spreeblog
 
 
     def default_parser_class
-      "Spreeblog::Parsers::#{default_parser.to_s.classify}Parser".constantize
+      "SpreeBlog::Parsers::#{default_parser.to_s.classify}Parser".constantize
     end
 
     # # Sets {#disqus_shortname}.

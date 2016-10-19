@@ -1,4 +1,4 @@
-class Spreeblog::Parsers::HtmlParser
+class SpreeBlog::Parsers::HtmlParser
 
   # A String containing the content to be parsed
   attr_reader :content

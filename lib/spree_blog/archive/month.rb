@@ -1,4 +1,4 @@
-module Spreeblog
+module SpreeBlog
   module Archive
 
     # Used internally by {List} when creating a new archive list.

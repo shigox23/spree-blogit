@@ -1,4 +1,4 @@
-module Spreeblog
+module SpreeBlog
   module Generators
     class InstallGenerator < Rails::Generators::Base
 

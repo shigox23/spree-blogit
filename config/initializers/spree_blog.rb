@@ -1,5 +1,5 @@
 # These configuration options can be used to customise the behaviour of blog
-Spreeblog.configure do |config|
+SpreeBlog.configure do |config|
 
   # What kind of comments do you want to add to your blog ? (:active_record, :disqus or :no)
   config.include_comments = :disqus

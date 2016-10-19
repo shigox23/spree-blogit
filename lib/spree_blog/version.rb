@@ -1,3 +1,3 @@
-module Spreeblog
+module SpreeBlog
   VERSION = '0.0.8'
 end

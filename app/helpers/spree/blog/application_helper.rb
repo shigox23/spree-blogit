@@ -20,7 +20,7 @@ module Spree
       # Returns an HTML safe String.
       def format_content(content = nil, &block)
         content = capture(&block) if block_given?
-        parser  = Spreeblog::configuration.default_parser_class.new(content)
+        parser  = SpreeBlog::configuration.default_parser_class.new(content)
         content.to_s.html_safe
       end
 

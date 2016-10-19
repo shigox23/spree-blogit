@@ -1,4 +1,4 @@
-module Spreeblog
+module SpreeBlog
   module Archive
 
     # This class is for documentation only, to define the Archiveable type

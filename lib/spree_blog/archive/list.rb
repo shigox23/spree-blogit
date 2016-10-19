@@ -1,4 +1,4 @@
-module Spreeblog
+module SpreeBlog
   module Archive
 
     # Public: The main class to be accessed when creating a HTML post archive.
@@ -34,7 +34,7 @@ module Spreeblog
 
       def ensure_archiveables_are_valid
         return true unless archiveables.detect { |a| !a.respond_to?(:published_at) }
-        raise Spreeblog::Archive::ArchiveError,
+        raise SpreeBlog::Archive::ArchiveError,
           "Invalid archive object detected. Please make sure your archiveable objects \
            respond to :published_at."
       end

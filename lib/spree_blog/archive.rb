@@ -1,4 +1,4 @@
-module Spreeblog
+module SpreeBlog
   module Archive
     require 'spree_blog/archive/list'
     require 'spree_blog/archive/year'

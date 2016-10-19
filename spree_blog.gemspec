@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_blog'
 
-  s.version     = Spreeblog::VERSION
+  s.version     = SpreeBlog::VERSION
 
   s.summary     = "A mountable Rails blog for Rails applications, adapted for Spree Commerce"
   s.description = "Add a blog to your Spree Commerce application"

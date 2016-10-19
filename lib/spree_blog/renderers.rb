@@ -1,6 +1,6 @@
-module Spreeblog::Renderers
+module SpreeBlog::Renderers
   def self.choose_highlight_renderer
-    case Spreeblog::configuration.syntax_highlighter
+    case SpreeBlog::configuration.syntax_highlighter
     when :albino
       require "spree_blog/renderers/html_with_albino"
       Redcarpet::Render::HTMLWithAlbino
@@ -8,7 +8,7 @@ module Spreeblog::Renderers
       require "spree_blog/renderers/html_with_pygments"
       Redcarpet::Render::HTMLWithPygments
     else
-      raise Spreeblog::ConfigurationError,
+      raise SpreeBlog::ConfigurationError,
         "'#{Spreeblog.configuration.syntax_highlighter}' is not a valid renderer"
     end
   end
