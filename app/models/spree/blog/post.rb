@@ -6,7 +6,8 @@ module Spree
 
       require "kaminari"
       require "acts-as-taggable-on"
-
+      require "bootsy"
+      include Bootsy::Container
       acts_as_taggable
       ActsAsTaggableOn.force_parameterize = true
 
