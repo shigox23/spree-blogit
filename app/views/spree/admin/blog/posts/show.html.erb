@@ -1,4 +1,4 @@
-<%= content_tag(:article, id: "blog_post_#{@post.id}", 
+<%= content_tag(:article, id: "blog_post_#{@post.id}",
   class: "blog_post is_list is_admin") do %>
 
   <%# Render the header for this blog post %>
@@ -20,7 +20,7 @@
   <%= render "blog/admin/posts/post_body", post: @post %>
 
 <% end %>
-
+<br>
 <%# Render admin links to edit/delete this post %>
 <%= render "blog/admin/posts/post_links", post: @post %>
 
