@@ -55,5 +55,4 @@ module Spree
 
     end
   end
-  helper Bootsy::Engine.helpers
 end
