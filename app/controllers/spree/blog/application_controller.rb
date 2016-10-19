@@ -1,12 +1,12 @@
 module Spree
-  module blog
+  module Blog
 
     class ApplicationController < Spree::StoreController
 
-      helper Spree::blog::ApplicationHelper
-      helper Spree::blog::LayoutHelper
-      helper Spree::blog::PostsHelper
-      helper Spree::blog::CommentsHelper
+      helper Spree::Blog::ApplicationHelper
+      helper Spree::Blog::LayoutHelper
+      helper Spree::Blog::PostsHelper
+      helper Spree::Blog::CommentsHelper
 
       helper_method :blog_conf
 

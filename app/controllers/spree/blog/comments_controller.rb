@@ -1,8 +1,8 @@
 module Spree
-  module blog
+  module Blog
 
     # Handles requests for creating blog::Comments
-    class CommentsController < Spree::blog::ApplicationController
+    class CommentsController < Spree::Blog::ApplicationController
 
       # Accessor method for the comment being created
       #

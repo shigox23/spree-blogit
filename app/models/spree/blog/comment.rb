@@ -1,5 +1,5 @@
 module Spree
-  module blog
+  module Blog
     class Comment < ActiveRecord::Base
 
       self.table_name = "blog_comments"
@@ -12,7 +12,7 @@ module Spree
       # = Associations =
       # ================
 
-      belongs_to :post, class_name: "Spree::blog::Post", foreign_key: "post_id", counter_cache: true, touch: true
+      belongs_to :post, class_name: "Spree::Blog::Post", foreign_key: "post_id", counter_cache: true, touch: true
 
       # TODO: Check if this is optimal
       URL_REGEX   = /\A(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?\Z/ix

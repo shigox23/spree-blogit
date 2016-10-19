@@ -1,5 +1,5 @@
 module Spree
-  module blog
+  module Blog
     class Post < ActiveRecord::Base
 
       self.table_name = "blog_posts"
@@ -42,7 +42,7 @@ module Spree
       # The {Comment Comments} written on this Post
       #
       # Returns an ActiveRecord::Relation instance
-      has_many :comments, :class_name => 'Spree::blog::Comment'
+      has_many :comments, :class_name => 'Spree::Blog::Comment'
 
       # ==========
       # = Scopes =

@@ -1,5 +1,5 @@
 module Spree
-  module blog
+  module Blog
     module CommentsHelper
 
       # The commenter's name for a Comment. When the Comment has a website, includes an html

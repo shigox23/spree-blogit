@@ -1,5 +1,5 @@
 module Spree
-  module blog
+  module Blog
     module ApplicationHelper
 
       # Format content using the {blog::Configuration#default_parser_class default_parser_class}

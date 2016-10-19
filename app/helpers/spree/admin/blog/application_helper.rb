@@ -1,6 +1,6 @@
 module Spree
   module Admin
-    module blog
+    module Blog
 
       module ApplicationHelper
 

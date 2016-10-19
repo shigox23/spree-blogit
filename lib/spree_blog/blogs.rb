@@ -9,7 +9,7 @@ module Spreeblog
       # a has-many assosciation between the model and {Post}
       def blogs
         @blogs = true
-        has_many :blog_posts, :as => "blogger", :class_name => "Spree::blog::Post"
+        has_many :blog_posts, :as => "blogger", :class_name => "Spree::Blog::Post"
       end
 
       # Has this model been registered as a blogging model?

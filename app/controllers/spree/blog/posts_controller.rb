@@ -1,8 +1,8 @@
 module Spree
-  module blog
+  module Blog
 
     # Handles requests for viewing blog::Posts
-    class PostsController < Spree::blog::ApplicationController
+    class PostsController < Spree::Blog::ApplicationController
 
       # The current blog::Post being displayed.
       #
@@ -60,7 +60,7 @@ module Spree
 
       # Set {#post} based on the :id param
       def set_post
-        @post = Spree::blog::Post.active_with_id(params[:slug])
+        @post = Spree::Blog::Post.active_with_id(params[:slug])
       end
 
       # The page parameter value for the current locale
@@ -70,7 +70,7 @@ module Spree
 
       # Sets {#posts} for the XML feed
       def set_posts_for_feed
-        @posts ||= Spree::blog::Post.for_feed
+        @posts ||= Spree::Blog::Post.for_feed
       end
 
       # Sets {#posts} for the HTML index page
@@ -78,7 +78,7 @@ module Spree
       # tag - The tag name to filter Posts by (default: nil)
       #
       def set_posts_for_index_page(tag = nil)
-        @posts ||= Spree::blog::Post.for_index(page_number)
+        @posts ||= Spree::Blog::Post.for_index(page_number)
       end
 
       # Sets {#posts} for the HTML index page when a tag parameter is present

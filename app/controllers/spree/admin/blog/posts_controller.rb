@@ -1,10 +1,10 @@
 module Spree
   module Admin
-    module blog
+    module Blog
 
-      class PostsController < Spree::Admin::blog::ApplicationController
+      class PostsController < Spree::Admin::Blog::ApplicationController
 
-        include Spree::Admin::blog::PostsHelper
+        include Spree::Admin::Blog::PostsHelper
 
         attr_accessor :post
 
@@ -66,16 +66,16 @@ module Spree
           if must_be_own_post
             @post = current_blogger.blog_posts.find(params[:id])
           else
-            @post = Spree::blog::Post.find(params[:id])
+            @post = Spree::Blog::Post.find(params[:id])
           end
         end
 
         def set_posts
-          @posts = Spree::blog::Post.for_admin_index(params[Kaminari.config.param_name])
+          @posts = Spree::Blog::Post.for_admin_index(params[Kaminari.config.param_name])
         end
 
         def set_latest_comments
-          @latest_comments = Spree::blog::Comment.latest
+          @latest_comments = Spree::Blog::Comment.latest
         end
 
         def set_new_blogger_post_from_params

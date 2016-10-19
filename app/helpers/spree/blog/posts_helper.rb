@@ -1,5 +1,5 @@
 module Spree
-  module blog
+  module Blog
     module PostsHelper
 
       # Shows the blog title as a link on the index page and not on the post page
@@ -17,7 +17,7 @@ module Spree
       # {blog::Configuration::include_comments} configuration
       def comments_for_post(post)
         comment_type = Spreeblog.configuration.include_comments
-        render(partial: "spree/blog/comments/#{comment_type}_comments", locals: { post: post, comment: Spree::blog::Comment.new })
+        render(partial: "spree/blog/comments/#{comment_type}_comments", locals: { post: post, comment: Spree::Blog::Comment.new })
       end
 
       # Renders the comments for a JS share bar based on the

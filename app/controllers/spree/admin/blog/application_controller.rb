@@ -1,6 +1,6 @@
 module Spree
   module Admin
-    module blog
+    module Blog
 
 
       # Inherits from the application's controller instead of ActionController::Base
@@ -15,8 +15,8 @@ module Spree
         end
 
         #layout blog_conf.admin_layout
-        helper Spree::blog::ApplicationHelper, Spree::Admin::blog::CommentsHelper,
-          Spree::Admin::blog::PostsHelper, Spree::Admin::blog::LayoutHelper
+        helper Spree::Blog::ApplicationHelper, Spree::Admin::Blog::CommentsHelper,
+          Spree::Admin::Blog::PostsHelper, Spree::Admin::Blog::LayoutHelper
 
 
         helper_method :blog_conf, :current_blogger
@@ -31,7 +31,7 @@ module Spree
           else
             raise NotImplementedError,
               "Please define :authenticate_blogger in your ApplicationController.\
-                Spree::Admin::blog needs this to determine who's signed in."
+                Spree::Admin::Blog needs this to determine who's signed in."
           end
         end
 
@@ -48,7 +48,7 @@ module Spree
           # else
           #   raise NotImplementedError,
           #     "Please define :current_blogger in your ApplicationController.\
-          #       Spree::Admin::blog needs this to determine who's signed in."
+          #       Spree::Admin::Blog needs this to determine who's signed in."
           # end
         end
       end

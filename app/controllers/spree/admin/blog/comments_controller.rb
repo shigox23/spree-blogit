@@ -1,7 +1,7 @@
 module Spree
   module Admin
-    module blog
-      class CommentsController < Spree::Admin::blog::ApplicationController
+    module Blog
+      class CommentsController < Spree::Admin::Blog::ApplicationController
 
         def index
           @comments = post.comments.order('created_at DESC')
@@ -41,7 +41,7 @@ module Spree
         end
 
         def post
-          @post ||= Spree::blog::Post.find(params[:post_id])
+          @post ||= Spree::Blog::Post.find(params[:post_id])
         end
 
       end
