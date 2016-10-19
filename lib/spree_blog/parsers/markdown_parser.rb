@@ -34,7 +34,7 @@ class SpreeBlog::Parsers::MarkdownParser
   # The Redcarpet Markdown handler
   def markdown
     @markdown ||= Redcarpet::Markdown.new(renderer,
-      Spreeblog.configuration.redcarpet_options)
+      SpreeBlog.configuration.redcarpet_options)
   end
 
 

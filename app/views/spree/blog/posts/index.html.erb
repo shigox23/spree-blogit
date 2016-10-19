@@ -12,7 +12,7 @@
       collection: @posts,
       spacer_template: "blog_post_spacer",
       locals: {
-        show_comments_count: (Spreeblog.configuration.include_comments == :active_records)
+        show_comments_count: (SpreeBlog.configuration.include_comments == :active_records)
       }  %>
   <% else %>
 

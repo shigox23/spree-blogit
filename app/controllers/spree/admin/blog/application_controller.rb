@@ -4,10 +4,10 @@ module Spree
 
 
       # Inherits from the application's controller instead of ActionController::Base
-      class ApplicationController < ResourceController #Spreeblog.configuration.admin_application_controller_base_class.constantize
+      class ApplicationController < ResourceController #SpreeBlog.configuration.admin_application_controller_base_class.constantize
 
         def self.blog_conf
-          Spreeblog.configuration
+          SpreeBlog.configuration
         end
 
         def blog_conf

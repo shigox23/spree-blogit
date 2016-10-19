@@ -10,7 +10,7 @@ module Spree
       acts_as_taggable
       ActsAsTaggableOn.force_parameterize = true
 
-      self.paginates_per(Spreeblog.configuration.posts_per_page)
+      self.paginates_per(SpreeBlog.configuration.posts_per_page)
 
       # ===============
       # = Validations =
@@ -22,7 +22,7 @@ module Spree
 
       validates :slug,  presence: true, length: { minimum: 5 }
 
-      validates :description, presence: Spreeblog.configuration.show_post_description
+      validates :description, presence: SpreeBlog.configuration.show_post_description
 
       validates :blogger_id, presence: true
 
@@ -51,7 +51,7 @@ module Spree
       scope :for_index, lambda { |page_no = 1|
         active.order("created_at DESC").page(page_no) }
 
-      scope :active, lambda { where(state:  Spreeblog.configuration.active_states ) }
+      scope :active, lambda { where(state:  SpreeBlog.configuration.active_states ) }
 
 
       # The posts to be displayed for RSS and XML feeds/sitemaps
@@ -93,7 +93,7 @@ module Spree
       # Returns description when blog.configuration.show_post_description is true
       # Returns body when blog.configuration.show_post_description is false
       def short_body
-        if Spreeblog.configuration.show_post_description
+        if SpreeBlog.configuration.show_post_description
           description
         else
           body
@@ -118,10 +118,10 @@ module Spree
       # Raises a ConfigurationError if the method called is not defined on {#blogger}
       def blogger_display_name
         return "" if blogger.blank?
-        if blogger.respond_to?(Spreeblog.configuration.blogger_display_name_method)
-          blogger.send(Spreeblog.configuration.blogger_display_name_method)
+        if blogger.respond_to?(SpreeBlog.configuration.blogger_display_name_method)
+          blogger.send(SpreeBlog.configuration.blogger_display_name_method)
         else
-          method_name = Spreeblog.configuration.blogger_display_name_method
+          method_name = SpreeBlog.configuration.blogger_display_name_method
           raise SpreeBlog::ConfigurationError, "#{blogger.class}##{method_name} is not defined"
         end
       end
@@ -142,7 +142,7 @@ module Spree
 
 
       def check_comments_config
-        unless Spreeblog.configuration.include_comments == :active_record
+        unless SpreeBlog.configuration.include_comments == :active_record
           raise RuntimeError,
             "Posts only allow active record comments (check blog configuration)"
         end

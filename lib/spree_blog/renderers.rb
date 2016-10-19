@@ -9,7 +9,7 @@ module SpreeBlog::Renderers
       Redcarpet::Render::HTMLWithPygments
     else
       raise SpreeBlog::ConfigurationError,
-        "'#{Spreeblog.configuration.syntax_highlighter}' is not a valid renderer"
+        "'#{SpreeBlog.configuration.syntax_highlighter}' is not a valid renderer"
     end
   end
 end

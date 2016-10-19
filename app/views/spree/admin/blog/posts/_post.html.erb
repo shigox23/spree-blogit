@@ -8,7 +8,7 @@
 
   <%= render 'spree/admin/blog/posts/post_description', post: post %>
 
-  <% if Spreeblog.configuration.include_comments == :active_record %>
+  <% if SpreeBlog.configuration.include_comments == :active_record %>
     <%= content_tag :p, comments_count_for_post(post), :class => 'comments_count' %>
   <% end %>
 

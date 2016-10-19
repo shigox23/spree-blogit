@@ -15,7 +15,7 @@ module Spree
       attr_reader :posts
 
       # If a layout is specified, use that. Otherwise, fall back to the default
-      layout Spreeblog.configuration.layout if Spreeblog.configuration.layout
+      layout SpreeBlog.configuration.layout if SpreeBlog.configuration.layout
 
       # Handles GET requests to /blog/posts.html, /blog/posts.xml, and /blog/posts.rss
       # Possible formats include:
