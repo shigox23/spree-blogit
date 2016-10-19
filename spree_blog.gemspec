@@ -40,7 +40,7 @@ Gem::Specification.new do |s|
   s.add_dependency "jquery-rails"
   s.add_dependency "acts-as-taggable-on", "~> 4.0"
   s.add_dependency "bootsy"
-  
+
   s.add_development_dependency 'capybara', '~> 2.4'
   s.add_development_dependency 'coffee-rails'
   s.add_development_dependency 'database_cleaner'
