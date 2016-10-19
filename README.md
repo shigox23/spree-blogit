@@ -1,4 +1,4 @@
-SpreeBlogit
+SpreeBlog
 ===========
 
 Introduction goes here.
@@ -6,11 +6,13 @@ Introduction goes here.
 Installation
 ------------
 
-Add spree_blogit to your Gemfile:
+Add spree_blog to your Gemfile:
 
 ```ruby
-gem 'spree_blogit'
+gem 'spree_blog', github: 'shigox23/spree_blog', branch: '3-1-stable'
 ```
+The branch option is important: it currently only supports Spree 3.1
+
 
 Bundle your dependencies and run the installation generator:
 
