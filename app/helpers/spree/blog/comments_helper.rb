@@ -5,7 +5,7 @@ module Spree
       # The commenter's name for a Comment. When the Comment has a website, includes an html
       # link containing their name. Otherwise, just shows the name as a String.
       #
-      # comment - A {blog::Comment}
+      # comment - A {Blog::Comment}
       #
       # Returns a String containing the commenter's name.
       def name_for_comment(comment)

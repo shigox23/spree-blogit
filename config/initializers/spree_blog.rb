@@ -53,7 +53,7 @@ SpreeBlog.configure do |config|
     gh_blockcode: true
   }
 
-  # If this is set, blog::PostsController will use the layout named here
+  # If this is set, Blog::PostsController will use the layout named here
   config.layout = "spree/layouts/spree_blog"
 
   # List of states that will be visible to the public

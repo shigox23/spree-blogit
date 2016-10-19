@@ -10,17 +10,17 @@ module Spree
 
       helper_method :blog_conf
 
-      # A helper method to access the {blog::configuration} at the class level.
+      # A helper method to access the {Blog::configuration} at the class level.
       #
-      # Returns a blog::Configuration
+      # Returns a Blog::Configuration
       def self.blog_conf
         SpreeBlog::configuration
       end
 
-      # A helper method to access the {blog::configuration} at the controller instance
+      # A helper method to access the {Blog::configuration} at the controller instance
       #   level.
       #
-      # Returns a blog::Configuration
+      # Returns a Blog::Configuration
       def blog_conf
         self.class.blog_conf
       end

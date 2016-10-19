@@ -1,12 +1,12 @@
 module Spree
   module Blog
 
-    # Handles requests for viewing blog::Posts
+    # Handles requests for viewing Blog::Posts
     class PostsController < Spree::Blog::ApplicationController
 
-      # The current blog::Post being displayed.
+      # The current Blog::Post being displayed.
       #
-      # Returns a blog::Post with id from params
+      # Returns a Blog::Post with id from params
       attr_reader :post
 
       # The current Posts being displayed

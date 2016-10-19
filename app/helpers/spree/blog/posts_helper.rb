@@ -14,14 +14,14 @@ module Spree
       require "spree_blog/archive"
 
       # Renders the comments for a {Post} based on the
-      # {blog::Configuration::include_comments} configuration
+      # {Blog::Configuration::include_comments} configuration
       def comments_for_post(post)
         comment_type = Spreeblog.configuration.include_comments
         render(partial: "spree/blog/comments/#{comment_type}_comments", locals: { post: post, comment: Spree::Blog::Comment.new })
       end
 
       # Renders the comments for a JS share bar based on the
-      # {blog::Configuration::include_share_bar} configuration
+      # {Blog::Configuration::include_share_bar} configuration
       def share_bar_for_post(post)
         return "" unless Spreeblog.configuration.include_share_bar
         render(partial: "spree/blog/posts/share_bar", locals: { post: post})

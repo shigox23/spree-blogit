@@ -1,12 +1,12 @@
 module Spree
   module Blog
 
-    # Handles requests for creating blog::Comments
+    # Handles requests for creating Blog::Comments
     class CommentsController < Spree::Blog::ApplicationController
 
       # Accessor method for the comment being created
       #
-      # Returns a blog::Comment
+      # Returns a Blog::Comment
       attr_reader :comment
 
       # Accessor method for the Post we're adding a Comment to
@@ -33,7 +33,7 @@ module Spree
 
       # Set this controller's post attribute to the current Post
       def set_post_from_post_id
-        @post = blog::Post.active_with_id(params[:post_id])
+        @post = Blog::Post.active_with_id(params[:post_id])
       end
 
       # Set this controller's comment attribute as a new comment with params

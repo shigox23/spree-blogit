@@ -9,11 +9,11 @@ module SpreeBlog
 
     include ActiveSupport::Configurable
 
-    # An Array containing the default states for {blog::Post Posts} that are considered
+    # An Array containing the default states for {Blog::Post Posts} that are considered
     #   "active". ("Active" {Post posts} are those that can be viewed by the public).
     ACTIVE_STATES = [:published]
 
-    # An Array containing the default states for {blog::Post Posts} that are considered
+    # An Array containing the default states for {Blog::Post Posts} that are considered
     #   "hidden". ("Hidden" {Post posts} are those that may not be viewed by the public).
     HIDDEN_STATES = [:draft, :archive]
 
@@ -61,7 +61,7 @@ module SpreeBlog
     config_accessor(:datetime_format) { :short }
 
     ##
-    # Number of {blog::Post posts} to show per page. This is a configuration for {https://github.com/amatsuda/kaminari Kaminari} (default: 5)
+    # Number of {Blog::Post posts} to show per page. This is a configuration for {https://github.com/amatsuda/kaminari Kaminari} (default: 5)
     #
     # Returns an Integer
     config_accessor(:posts_per_page) { 5 }

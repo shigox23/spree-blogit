@@ -14,7 +14,7 @@ module Spree
         end
 
         def show
-          blog::configuration.include_comments = :disqus
+          Blog::configuration.include_comments = :disqus
           set_post_from_id(false)
           set_latest_comments
         end

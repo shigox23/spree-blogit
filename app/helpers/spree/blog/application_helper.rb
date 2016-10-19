@@ -2,7 +2,7 @@ module Spree
   module Blog
     module ApplicationHelper
 
-      # Format content using the {blog::Configuration#default_parser_class default_parser_class}
+      # Format content using the {Blog::Configuration#default_parser_class default_parser_class}
       #
       # content - A String containing the content to be formatted (defaults: nil)
       # block   - A Proc that returns a String of content to be formatted

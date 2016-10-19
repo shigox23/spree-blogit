@@ -65,8 +65,8 @@ module Spree
       #
       # id - The id of the Post to find
       #
-      # Returns a blog::Post
-      # Raises ActiveRecord::NoMethodError if no blog::Post could be found
+      # Returns a Blog::Post
+      # Raises ActiveRecord::NoMethodError if no Blog::Post could be found
       def self.active_with_id(title)
         active.find_by_slug(title)
       end
