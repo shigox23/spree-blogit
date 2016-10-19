@@ -11,7 +11,7 @@ require "spree_blog/parsers"
 
 require "validators"
 
-module Spreeblog
+module SpreeBlog
 
   autoload :Kaminari, "kaminari"
 

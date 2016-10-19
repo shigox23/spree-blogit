@@ -9,7 +9,7 @@ namespace :spree_blog do
     else
       # load_all_models
       seed_blog_content.each do |blog_post_atts|
-        state = Spreeblog.configuration.active_states.first
+        state = SpreeBlog.configuration.active_states.first
         begin
           blogger.first.blog_posts.create!(blog_post_atts.merge(state: state))
         rescue NoMethodError
