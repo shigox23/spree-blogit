@@ -7,10 +7,12 @@ module Spree
         include Spree::Admin::Blog::PostsHelper
 
         attr_accessor :post
+        store = Spree::Store.current
 
         def index
           set_posts
           set_latest_comments
+
         end
 
         def show
