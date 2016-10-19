@@ -1,15 +1,15 @@
 <% content_for :page_title do %>
-    <%= t(:blog_posts, scope: 'blog.posts') %>
+<%= t(:blog_posts, scope: 'blog.posts') %>
 <% end %>
 
 <% content_for :page_actions do %>
-    <%= button_link_to t(:new_blog_post, scope: 'blog.admin'), new_admin_blog_post_url, { :class => 'btn-success', :icon => 'add', 'data-update' => 'new_blog_post', :id => 'new_blog_post_link' } %>
+<%= button_link_to t(:new_blog_post, scope: 'blog.admin'), new_admin_blog_post_url, { :class => 'btn-success', :icon => 'add', 'data-update' => 'new_blog_post', :id => 'new_blog_post_link' } %>
 <% end %>
 
 <% if @posts.any? %>
-  <%= render partial: 'spree/admin/blog/posts/post', collection: @posts, spacer_template: 'blog_post_spacer' %>
+<%= render partial: 'spree/admin/blog/posts/post', collection: @posts, spacer_template: 'blog_post_spacer' %>
 <% else %>
-  <%= render partial: 'spree/blog/posts/empty' %>
+<%= render partial: 'spree/blog/posts/empty' %>
 <% end %>
 
 <%= render 'pagination' %>

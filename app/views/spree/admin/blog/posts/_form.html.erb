@@ -1,24 +1,26 @@
 <% if @post.errors.any? %>
-  <div id="error_explanation">
+<div id="error_explanation">
     <h2><%=t :prohibited_this_post_from_being_saved, scope: 'blog.admin.posts', count: @post.errors.count%></h2>
 
     <ul>
-      <% @post.errors.full_messages.each do |msg| %>
+        <% @post.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
-      <% end %>
+        <% end %>
     </ul>
-  </div>
+</div>
 <% end %>
 
 <%= f.field_container :title, class: ['form-group'] do %>
-  <%= f.label :title, t(:post_title, scope: "blog.admin.posts") %> <span class="required">*</span>
-  <%= f.text_field :title, placeholder: t(:give_your_post_a_title, scope: 'blog.admin.posts'), :class => 'form-control', :required => true %>
+<%= f.label :title, t(:post_title, scope: "blog.admin.posts") %>
+<span class="required">*</span>
+<%= f.text_field :title, placeholder: t(:give_your_post_a_title, scope: 'blog.admin.posts'), :class => 'form-control', :required => true %>
 <% end %>
 
 <!-- <a class="btn btn-primary" id="slug-slime"><span class="glyphicon glyphicon-hand-down"></span></a>-->
 <%= f.field_container :slug, class: ['form-group'] do %>
-  <%= f.label :slug, t(:post_slug, scope: "blog.admin.posts") %> <span class="required">*</span>
-  <%= f.text_field :slug, :class => 'form-control', :required => true %>
+<%= f.label :slug, t(:post_slug, scope: "blog.admin.posts") %>
+<span class="required">*</span>
+<%= f.text_field :slug, :class => 'form-control', :required => true %>
 <% end %>
 
 <!-- <%#= f.field_container :description, class: ['form-group'] do %>
@@ -27,16 +29,19 @@
 <%# end %>-->
 
 <%= f.field_container :body, class: ['form-group'] do %>
-  <%= f.label :body, t(:post_body, scope: 'blog.admin.posts') %> <span class="required">*</span>
-  <%= f.bootsy_area :body, id: "SimpleMDE", class: 'form-control', style: 'width:100%;', rows: "25" %>
+<%= f.label :body, t(:post_body, scope: 'blog.admin.posts') %>
+<span class="required">*</span>
+<%= f.bootsy_area :body, id: "SimpleMDE", class: 'form-control', style: 'width:100%;', rows: "25" %>
 <% end %>
 
 <%= f.field_container :tag_list, id: "new_blog_post_tag_field", class: ['form-group'] do %>
-  <%= f.label :tag_list, t(:tags, scope: 'blog.admin.posts') %> <span class="required">*</span>
-  <%= f.text_field :tag_list, value: f.object.tags.join(", "), placeholder: t(:tag_placeholder, scope: 'blog.admin.posts'), :class => 'form-control', :required => true %>
+<%= f.label :tag_list, t(:tags, scope: 'blog.admin.posts') %>
+<span class="required">*</span>
+<%= f.text_field :tag_list, value: f.object.tags.join(", "), placeholder: t(:tag_placeholder, scope: 'blog.admin.posts'), :class => 'form-control', :required => true %>
 <% end %>
 
 <%= f.field_container :state, id: "new_blog_post_state_field", class: ['form-group'] do %>
-  <%= f.label :state, t(:state, scope: 'blog.admin.posts') %> <span class="required">*</span>
-  <%= f.collection_select(:state, blog_conf.active_states + blog_conf.hidden_states, :to_s, :to_s, {}, { class: 'form-control', :required => true }) %>
+<%= f.label :state, t(:state, scope: 'blog.admin.posts') %>
+<span class="required">*</span>
+<%= f.collection_select(:state, blog_conf.active_states + blog_conf.hidden_states, :to_s, :to_s, {}, { class: 'form-control', :required => true }) %>
 <% end %>

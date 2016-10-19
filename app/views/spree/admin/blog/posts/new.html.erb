@@ -1,26 +1,23 @@
 <% content_for :page_title do %>
-    <%= t(:new_blog_post, scope: 'blog.admin.posts') %>
+<%= t(:new_blog_post, scope: 'blog.admin.posts') %>
 <% end %>
 
 <script type="text/javascript">
-  $(function(){
-    new SimpleMDE({
-      element: document.getElementById('simplemde'),
-      spellChecker: false,
+    $(function () {
+        new SimpleMDE({element: document.getElementById('simplemde'), spellChecker: false});
     });
-  });
 </script>
 
 <%= form_for @post, url: admin_blog_posts_path do |f| %>
 
-  <%= render partial: 'form', locals: { f: f } %>
+<%= render partial: 'form', locals: { f: f } %>
 
-  <div class="form-actions">
+<div class="form-actions">
     <div class="form-actions" data-hook="buttons">
-      <%= button Spree.t('actions.create'), 'ok', 'submit', { class: 'btn-success', data: { disable_with: "#{ Spree.t(:saving) }..." } } %>
-      <span class="or"><%= Spree.t(:or) %></span>
-      <%= button_link_to Spree.t('actions.cancel'), admin_blog_root_path, icon: 'remove' %>
+        <%= button Spree.t('actions.create'), 'ok', 'submit', { class: 'btn-success', data: { disable_with: "#{ Spree.t(:saving) }..." } } %>
+        <span class="or"><%= Spree.t(:or) %></span>
+        <%= button_link_to Spree.t('actions.cancel'), admin_blog_root_path, icon: 'remove' %>
     </div>
-  </div>
+</div>
 
 <% end %>

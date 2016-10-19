@@ -1,34 +1,33 @@
 <%= content_tag(:article, id: "blog_post_#{@post.id}",
   class: "blog_post is_list is_admin") do %>
 
-  <%# Render the header for this blog post %>
-  <h1 class="blog_post_header"><%= link_to(@post.title, @post) %></h1>
+<%# Render the header for this blog post %>
+<h1 class="blog_post_header"><%= link_to(@post.title, @post) %></h1>
 
-  <%= muted_text class: "blog_post-blogger_info" do %>
-      <%= t :written_by, scope: 'blog.admin.posts',
+<%= muted_text class: "blog_post-blogger_info" do %>
+<%= t :written_by, scope: 'blog.admin.posts',
         author: @post.blogger_display_name %>
-      <%= time_tag(@post.created_at, pubdate: true,
+<%= time_tag(@post.created_at, pubdate: true,
         format: blog_conf.datetime_format) %>
-  <% end %>
+<% end %>
 
-  <h3><%= t(:post_description, scope: "blog.admin.posts") %></h3>
-  <%# Render the body of this blog post (as Markdown) %>
-  <%= render "blog/admin/posts/post_description", post: @post %>
+<h3><%= t(:post_description, scope: "blog.admin.posts") %></h3>
+<%# Render the body of this blog post (as Markdown) %>
+<%= render "blog/admin/posts/post_description", post: @post %>
 
-  <h3><%= t(:post_content, scope: "blog.admin.posts") %></h3>
-  <%# Render the body of this blog post (as Markdown) %>
-  <%= render "blog/admin/posts/post_body", post: @post %>
+<h3><%= t(:post_content, scope: "blog.admin.posts") %></h3>
+<%# Render the body of this blog post (as Markdown) %>
+<%= render "blog/admin/posts/post_body", post: @post %>
 
 <% end %>
 <br>
 <%# Render admin links to edit/delete this post %>
 <%= render "blog/admin/posts/post_links", post: @post %>
 
-
 <%= content_for(:aside) do %>
 
-  <h2><%= t(:post_comments, scope: "blog.admin.posts") %></h2>
+<h2><%= t(:post_comments, scope: "blog.admin.posts") %></h2>
 
-  <%= render "blog/admin/comments/#{blog_conf.include_comments}" %>
+<%= render "blog/admin/comments/#{blog_conf.include_comments}" %>
 
 <% end %>
