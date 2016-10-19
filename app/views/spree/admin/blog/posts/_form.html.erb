@@ -15,7 +15,7 @@
   <%= f.text_field :title, placeholder: t(:give_your_post_a_title, scope: 'blog.admin.posts'), :class => 'form-control', :required => true %>
 <% end %>
 
-<a class="btn btn-primary" id="slug-slime"><span class="glyphicon glyphicon-hand-down"></span></a>
+<!-- <a class="btn btn-primary" id="slug-slime"><span class="glyphicon glyphicon-hand-down"></span></a> -->
 
 <%= f.field_container :slug, class: ['form-group'] do %>
   <%= f.label :slug, t(:post_slug, scope: "blog.admin.posts") %> <span class="required">*</span>
@@ -29,7 +29,7 @@
 
 <%= f.field_container :body, class: ['form-group'] do %>
   <%= f.label :body, t(:post_body, scope: 'blog.admin.posts') %> <span class="required">*</span>
-  <%= f.text_area :body, as: :bootsy, id: 'simplemde', placeholder: t(:write_something_here, scope: 'blog.admin.posts') %>
+  <%= f.bootsy_area :body, id: 'simplemde' %>
 <% end %>
 
 <%= f.field_container :tag_list, id: "new_blog_post_tag_field", class: ['form-group'] do %>
